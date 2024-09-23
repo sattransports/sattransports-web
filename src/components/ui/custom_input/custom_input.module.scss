@@ -1,0 +1,33 @@
+.customInput {
+  padding: 8px 10px;
+
+  &.v1 {
+    border: none;
+    border-bottom: 2px solid rgb(190, 190, 190);
+    outline: none;
+    background-color: white;
+
+    &:active,
+    &.focus,
+    &:focus-visible,
+    &:hover {
+      border-bottom: 2px solid $color_1;
+    }
+
+    &[type="submit"] {
+      background-color: $color_2;
+      border: none;
+      color: $color_1;
+      padding: 14px 0;
+
+      &:hover {
+        background-color: $color_1;
+        color: $color_2;
+      }
+
+      &:active{
+        transform: scale(0.95);
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.customButton {
+  padding: 10px 20px;
+  outline: none;
+  border-radius: 10px;
+  width: fit-content;
+
+  &.v1 {
+    background-color: $color_1;
+    border: none;
+    color: white !important;
+    
+    a{
+      color: white !important;
+
+    }
+
+    &:hover{
+        background-color: $color_2;
+        color: $color_1 !important;
+    }
+  }
+}

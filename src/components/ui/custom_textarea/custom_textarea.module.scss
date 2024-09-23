@@ -1,0 +1,17 @@
+.customInput {
+  padding: 10px;
+
+  &.v1 {
+    border: none;
+    border: 2px solid rgb(190, 190, 190);
+    outline: none;
+    border-radius: 5px;
+
+    &:active,
+    &.focus,
+    &:focus-visible,
+    &:hover {
+      border: 2px solid $color_1;
+    }
+  }
+}

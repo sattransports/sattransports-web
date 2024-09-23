@@ -1,0 +1,39 @@
+/* styles/PrivacyPolicy.module.css */
+.privacyContainer {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .privacyMain {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .privacyMain h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .privacyMain h2 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+  }
+  
+  .privacyMain h3 {
+    font-size: 1.25rem;
+    margin-top: 15px;
+  }
+  
+  .privacyMain p,
+  .privacyMain ul {
+    margin: 10px 0;
+  }
+  
+  .privacyMain ul {
+    list-style-type: disc;
+    margin-left: 20px;
+  }
+  

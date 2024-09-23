@@ -1,0 +1,44 @@
+.tabs {
+  display: flex;
+  justify-content: center;
+  .tab {
+    padding: 10px 50px;
+    cursor: pointer;
+    font-size: 18px;
+    &:not(&:last-child) {
+      border-right: none !important;
+    }
+  }
+
+  @include respond-below(md) {
+    .tab {
+      padding: 10px 16px;
+      font-size: 16px;
+    }
+  }
+
+  &.v1 {
+    .tab {
+      border: 2px solid $color_2;
+      color: $color_2;
+      &:hover,
+      &.active {
+        background-color: $color_2;
+        color: white;
+      }
+    }
+  }
+
+  &.v2 {
+    .tab {
+      border: 2px solid $color_1;
+      color: $color_1;
+
+      &:hover,
+      &.active {
+        background-color: $color_2;
+        color: white;
+      }
+    }
+  }
+}

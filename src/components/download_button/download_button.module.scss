@@ -1,0 +1,16 @@
+.downld {
+  display: flex;
+  gap: 20px;
+  width: fit-content;
+
+  @include respond-below(md) {
+    gap: 10px;
+    .apl {
+      width: 135px;
+    }
+
+    .play {
+      width: 150px;
+    }
+  }
+}

@@ -1,0 +1,140 @@
+.aboutScreen {
+  padding: 50px 0;
+
+  .caption {
+    color: rgb(56, 56, 56);
+  }
+  .ceo {
+    //   border: 1px solid $color_1;
+    border-bottom: 2px solid $color_1;
+    padding-bottom: 40px;
+    .message {
+      font-size: 17px;
+
+      h1 {
+        font-size: 55px;
+        span {
+          color: $color_1;
+        }
+      }
+
+      .msg2 {
+        font-size: 20px;
+        color: $color_1;
+      }
+    }
+
+    img {
+      border-radius: 16px;
+      border: 4px solid $color_1;
+    }
+  }
+
+  .more {
+    h1 {
+      font-size: 35px;
+      span {
+        color: $color_1;
+      }
+    }
+
+    hr {
+      width: 150px;
+      height: 5px;
+      border: none;
+      background-color: $color_1;
+      opacity: 1;
+    }
+  }
+
+  @include respond-below(md) {
+    .caption {
+      text-align: center;
+    }
+    .ceo {
+      text-align: center;
+      img {
+        width: 300px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+.missionValuesSection {
+  margin-top: 1.2rem;
+
+  @include respond-below(md) {
+    margin-top: 2.5rem;
+    margin-right: 0.25rem;
+  }
+
+  .valuesContainer {
+    display: flex;
+    gap: 1.25rem;
+
+    @include respond-below(md) {
+      flex-direction: column;
+    }
+  }
+
+  .valueItem {
+    flex: 0 0 50%;
+
+    @include respond-below(md) {
+      width: 100%;
+    }
+  }
+
+  .valueContent {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: $color_1;
+
+    @include respond-below(md) {
+      margin-top: 1.5rem;
+    }
+
+    .valueHeader {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-size: 1.5rem;
+      font-weight: 500;
+      gap: 1rem;
+      padding-bottom: 0.5rem;
+
+      @include respond-below(md) {
+        flex-direction: column;
+      }
+
+      .iconBlock {
+        display: inline-block;
+        padding-right: 0.5rem;
+        .valueIcon {
+          width: 3rem;
+          aspect-ratio: 1;
+          object-fit: contain;
+        }
+      }
+
+      .titleBlock {
+        display: inline-block;
+        font-size: 1.25rem;
+        font-weight: 600;
+      }
+    }
+
+    .valueDescription {
+      margin-top: 1rem;
+      font-size: 1rem;
+      color: #333;
+
+      @include respond-below(md) {
+        margin-top: 0.75rem;
+      }
+    }
+  }
+}
