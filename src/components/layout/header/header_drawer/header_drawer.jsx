@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import PAGES from "@/constants/pages";
-import logo from "../../../../../public/logo.png";
 import styles from "./header_drawer.module.scss";
 import { Image, Offcanvas } from "react-bootstrap";
 
@@ -15,7 +14,7 @@ const HeaderDrawer = ({ show, setShow, router }) => {
           setShow(false);
         }}
       >
-        <Image src={logo} alt="logo" fluid width={100} />
+        <Image src='logo.png' alt="logo" fluid width={100} />
       </Offcanvas.Header>
       <Offcanvas.Body>
         <div className={styles.body}>

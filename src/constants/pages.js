@@ -9,7 +9,7 @@ const PAGES = [
   },
   {
     name: "Service",
-    href: "/service",
+    href: "/services",
   },
   {
     name: "Clients",

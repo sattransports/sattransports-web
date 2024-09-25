@@ -12,6 +12,7 @@
     @include respond-below(md) {
       height: auto;
       object-fit: contain;
+      margin-top: 100px;
     }
 
     @include respond-above(md) {
