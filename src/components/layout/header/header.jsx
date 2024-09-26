@@ -24,6 +24,28 @@ function Header() {
 
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
+      <div className={styles.mobileHeader}>
+        <div className={styles.mobileLogo}>
+          <Image
+            src={logo}
+            alt="logo"
+            fluid
+            className={styles.logo}
+            style={{}}
+          />
+        </div>
+        <div
+          className={styles.hamBurger}
+          onClick={() => {
+            setShow(true)
+          }}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
       <HeaderDrawer setShow={setShow} show={show} router={router} />
       <CustomContainer>
         <div className={styles.wrap}>

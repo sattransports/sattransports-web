@@ -20,6 +20,14 @@
     height: 100%;
   }
 
+  .mobileLogo img {
+    display: none;
+  }
+
+  .hamBurger span {
+    display: none;
+  }
+
   .wrap {
     display: flex;
     justify-content: space-between;
@@ -127,6 +135,32 @@
       .btn {
         display: unset;
       }
+    }
+  }
+
+  @include respond-below(md) {
+    .mobileHeader{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 5px 20px;
+    }
+    .mobileLogo img {
+      display: block;
+      width: 150px;
+      height: 70px;
+    }
+
+    .hamBurger {
+      display: inline-block;
+      cursor: pointer;
+    }
+    .hamBurger span {
+      display: block; /* Makes spans behave like block elements */
+      width: 35px;
+      height: 5px;
+      background-color: black;
+      margin: 6px 0;
     }
   }
 }
