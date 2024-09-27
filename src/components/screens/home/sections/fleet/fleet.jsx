@@ -12,7 +12,7 @@ const Card = ({ data, isEven }) => {
         className={styles.card}
         data-aos={`flip-${isEven ? "right" : "left"}`}
       >
-        <Image src={`${img}`} alt={id} height={200} />
+        <Image src={`${img}`} alt={id} height={200} data-aos="fade-left" />
         <h4>{head}</h4>
         <p>{text}</p>
       </div>

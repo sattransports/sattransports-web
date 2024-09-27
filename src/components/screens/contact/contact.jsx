@@ -1,53 +1,55 @@
 import React from "react";
 import styles from "./contact.module.scss";
-import { Col, Row } from "react-bootstrap";
 import ContactForm from "./contact_form/contact_form";
 import CustomContainer from "@/components/ui/custom_container/custom_container";
-import SectionHeading from "@/components/ui/section_heading/section_heading";
-import SocialMedia from "@/components/social_media/social_media";
-import {
-  Envelope,
-  EnvelopeAtFill,
-  PhoneFill,
-  PinMap,
-  PinMapFill,
-} from "react-bootstrap-icons";
+import { EnvelopeAtFill, PhoneFill, PinMapFill } from "react-bootstrap-icons";
+import LocationSection from "./location/location";
+import VehicleAttachmentSection from "./vehicle_section/vehicle_section";
 
 const ContactScreen = () => {
   return (
-    <main className={styles.contactScreen}>
+    <main className={styles.contactSection}>
       <CustomContainer>
-        {/* <SectionHeading head="Contact Us" /> */}
-        <div className={styles.box}>
-          <div className={styles.info}>
-            <h1>
-              Let&apos;s talk on something <span>great</span> together
-            </h1>
-            <div className={styles.details}>
-              <div className={styles.det}>
-                <EnvelopeAtFill />
-                <p>admin@raidotaxi.com</p>
-              </div>
-              <div className={styles.det}>
+        <div className={styles.contactContent}>
+          <div className={styles.contactDetails}>
+            <div className={styles.contactHeading}>
+              <h2>Contact Us</h2>
+              <p>
+                We're here to answer any questions you may have.
+                <br />
+                Reach out to us, and we'll respond as soon as we can.
+              </p>
+            </div>
+            <div className={styles.contactInfo}>
+              <div className={styles.contactItem}>
                 <PhoneFill />
-                <p>+91 86677 28057</p>
+                <span>831-9929-86700</span>
               </div>
-              <div className={styles.det}>
-                <PinMapFill />
-                <p>Chennai, Coimbatore</p>
-              </div>
-               <div className={styles.det}>
-               
-                <p>Head Office : 25-B, Second Floor, Ram Nagar North Extension,<br/>Second Street, Velachery<br/>Chennai - 600 042</p>
+              <div className={styles.contactItem}>
+                <EnvelopeAtFill />
+                <span>contact@domain.com</span>
               </div>
             </div>
-            <div>
-              <h4>Follow Us on</h4>
-              <SocialMedia />
+            <div className={styles.extraInfo}>
+              <div className={styles.infoBlock}>
+                <h3>Customer Support</h3>
+                <p>
+                  Need assistance with your booking? Our support team is here to
+                  help.
+                </p>
+              </div>
+              <div className={styles.infoBlock}>
+                <h3>Feedback & Suggestions</h3>
+                <p>Share your experience or suggestions to help us improve.</p>
+              </div>
             </div>
           </div>
-          <ContactForm />
+          <div className={styles.formContainer}>
+            <ContactForm />
+          </div>
         </div>
+        <LocationSection />
+        <VehicleAttachmentSection />
       </CustomContainer>
     </main>
   );

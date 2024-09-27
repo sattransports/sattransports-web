@@ -1,11 +1,11 @@
 const SOCIAL_MEDIA_LINKS = [
   {
     name: "facebook",
-    link: "https://www.facebook.com/profile.php?id=61560272615950&mibextid=ZbWKwL",
+    link: "/",
   },
   {
     name: "instagram",
-    link: "https://www.instagram.com/just_raido",
+    link: "/",
   },
   {
     name: "twitter",
@@ -17,7 +17,7 @@ const SOCIAL_MEDIA_LINKS = [
   },
   {
     name: "linkedin",
-    link: "https://www.linkedin.com/company/raidotaxi/",
+    link: "/",
   },
 ];
 

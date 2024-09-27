@@ -1,0 +1,67 @@
+.carousel {
+  padding-top: 4rem;
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+
+  @include respond-below(md) {
+    max-width: 100%;
+  }
+
+  .carouselWrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .imageContainer {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+
+      .imageBlock {
+        flex: 0 0 100%;
+        img {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .prevButton,
+    .nextButton {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 24px;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+    }
+
+    .prevButton {
+      left: 10px;
+    }
+
+    .nextButton {
+      right: 10px;
+    }
+  }
+
+  @include respond-below(md) {
+    .carouselWrapper {
+      .prevButton,
+      .nextButton {
+        padding: 5px;
+        font-size: 18px;
+      }
+    }
+  }
+}

@@ -1,0 +1,112 @@
+.clientSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1240px;
+  margin-top: 8rem;
+
+  @include respond-below(md) {
+    margin-top: 2rem;
+    max-width: 100%;
+  }
+
+  .textContainer {
+    text-align: center;
+    color: #000;
+
+    .heading {
+      font-size: 6rem;
+      font-weight: 600;
+
+      @include respond-below(md) {
+        font-size: 4rem;
+      }
+    }
+
+    .description {
+      margin-top: 1rem;
+      font-size: 1.25rem;
+
+      @include respond-below(md) {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .subHeading {
+    align-self: flex-start;
+    margin-top: 13rem;
+    font-size: 3rem;
+    font-weight: 600;
+
+    @include respond-below(md) {
+      margin-top: 2.5rem;
+      font-size: 2rem;
+    }
+  }
+
+  .logoContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8rem;
+    width: 100%;
+    min-height: 953px;
+
+    @include respond-below(md) {
+      flex-direction: column;
+      margin-top: 2rem;
+      min-height: auto;
+    }
+  }
+
+  .footerText {
+    margin-top: 20rem;
+    text-align: center;
+    color: #000;
+
+    @include respond-below(md) {
+      margin-top: 2rem;
+    }
+
+    h2 {
+      font-size: 3rem;
+      font-weight: 600;
+
+      @include respond-below(md) {
+        font-size: 2rem;
+      }
+    }
+
+    p {
+      margin-top: 1rem;
+      font-size: 1.25rem;
+
+      @include respond-below(md) {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+.clientLogo {
+  flex: 1 1 33%;
+  padding-bottom: 4rem;
+  overflow: hidden;
+
+  @include respond-below(md) {
+    flex: 1 1 100%;
+    padding-bottom: 2rem;
+  }
+
+  img {
+    width: 100%;
+    max-width: 400px;
+    object-fit: contain;
+
+    @include respond-below(md) {
+      margin-top: 1.25rem;
+      width: 100%;
+    }
+  }
+}

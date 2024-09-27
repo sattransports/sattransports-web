@@ -10,18 +10,14 @@ import fonts from "@/styles/fonts";
 import { Image } from "react-bootstrap";
 import styles from "@/styles/Home.module.scss";
 
-// Import the functions you need from the SDKs you need
 export default function App({ Component, pageProps }) {
   const [admin, setAdmin] = useState(null);
 
   useEffect(() => {
     Aos.init({
-      // easing: "ease-out-cubic",
       duration: 1000,
       once: false,
     });
-
-    // const analytics = getAnalytics(firebaseApp);
   }, []);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -42,41 +38,22 @@ export default function App({ Component, pageProps }) {
   }, []);
 
   return (
-    // <SessionProvider session={pageProps.session}>
     <>
-      {/* {isLoading ? (
+      {isLoading ? (
         <div className={styles.splash}>
-          <Image src="/splash.gif" alt="splash" width={200} />
-          <div>
-            <Image
-              src="/Your Riding.png"
-              alt="splash"
-              height={10}
-              data-aos="fade-right"
-              data-aos-delay="1200"
-            />
-            <Image
-              src="/partner.png"
-              alt="splash"
-              height={10}
-              data-aos="fade-left"
-              data-aos-delay="1200"
-            />
-          </div>
+          <Image src="/sat.gif" alt="sat" width={200} />
         </div>
       ) : (
-      )} */}
-
-      <div
-        className={`${fonts.mainFont} ${styles.app} ${
-          isLoading ? styles.loading : ""
-        }`}
-      >
-        <Layout>
-          <Component {...pageProps} admin={admin} />
-        </Layout>
-      </div>
+        <div
+          className={`${fonts.mainFont} ${styles.app} ${
+            isLoading ? styles.loading : ""
+          }`}
+        >
+          <Layout>
+            <Component {...pageProps} admin={admin} />
+          </Layout>
+        </div>
+      )}
     </>
-    // </SessionProvider>
   );
 }

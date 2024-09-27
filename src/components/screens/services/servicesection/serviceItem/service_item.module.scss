@@ -1,0 +1,56 @@
+.serviceItem {
+  display: flex;
+  gap: 1.5rem;
+
+  @include respond-below(md) {
+    flex-direction: column;
+  }
+
+  &.left {
+    .imageContainer {
+      width: 40%;
+    }
+    .textContainer {
+      width: 60%;
+    }
+  }
+
+  &.right {
+    flex-direction: row-reverse;
+
+    .imageContainer {
+      width: 35%;
+    }
+    .textContainer {
+      width: 65%;
+    }
+  }
+}
+
+.imageContainer {
+  .image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-top: 0;
+  }
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: $color_2;
+  }
+
+  .description {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: $color_1;
+  }
+}

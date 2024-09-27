@@ -1,0 +1,28 @@
+.servicesInAction {
+  margin-top: 50px;
+  text-align: center;
+
+  .heading {
+    font-size: 48px;
+    font-weight: 600;
+    @include respond-below(md) {
+      font-size: 36px;
+    }
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+
+    @include respond-below(md) {
+      flex-direction: column;
+    }
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}

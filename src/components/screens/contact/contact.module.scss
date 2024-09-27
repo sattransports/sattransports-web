@@ -1,71 +1,79 @@
-.contactScreen {
-  padding: 100px 0 50px 0;
-  min-height: 90vh;
-  @include flexCenter;
+.contactSection {
+  margin-top: 100px;
+  max-width: 1240px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 
-  .box {
-    background-color: $color_1;
-    padding: 50px;
-    border-radius: 20px;
-    width: fit-content;
-    margin: auto;
+  @include respond-below(md) {
+    margin-top: 40px;
+    max-width: 100%;
+  }
+
+  .contactContent {
     display: flex;
     gap: 20px;
-    max-width: 1200px;
-    // box-shadow: rgba(0, 0, 0, 0.3) 1.95px 1.95px 2.6px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
-    .info {
+    @include respond-below(md) {
+      flex-direction: column;
+    }
+  }
+
+  .contactDetails {
+    width: 42%;
+    display: flex;
+    flex-direction: column;
+
+    @include respond-below(md) {
+      width: 100%;
+    }
+
+    .contactHeading {
+      h2 {
+        font-size: 48px;
+
+        @include respond-below(md) {
+          font-size: 32px;
+        }
+      }
+
+      p {
+        margin-top: 10px;
+      }
+    }
+
+    .contactInfo {
+      margin-top: 20px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      h1 {
-        color: white;
-        font-size: 50px;
+      gap: 10px;
 
-        span {
-          color: $color_2;
-        }
-      }
-
-      .details {
+      .contactItem {
         display: flex;
-        flex-direction: column;
-        gap: 20px;
-        .det {
-          display: flex;
-          align-items: center;
-          gap: 16px;
-          font-size: 18px;
-          p {
-            color: white;
-          }
+        align-items: center;
+        gap: 10px;
 
-          svg {
-            color: $color_2;
-          }
+        img {
+          width: 24px;
+          height: 24px;
         }
       }
+    }
 
-      h4 {
-        color: white;
+    .extraInfo {
+      margin-top: 40px;
+
+      .infoBlock {
+        margin-bottom: 20px;
       }
     }
   }
-  @include respond-below(lg) {
-    .box {
-      flex-direction: column;
-      align-items: center;
-      padding: 24px 16px;
 
-      .info {
-        gap: 30px;
-        margin-bottom: 20px;
+  .formContainer {
+    width: 58%;
 
-        h1 {
-          font-size: 40px;
-        }
-      }
+    @include respond-below(md) {
+      width: 100%;
     }
   }
 }

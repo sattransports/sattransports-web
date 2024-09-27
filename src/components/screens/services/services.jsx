@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./services.module.scss";
 import CustomContainer from "@/components/ui/custom_container/custom_container";
 import HeroSection from "./herosection/HeroSection";
-import ServiceSection from "./servicesection/ServiceSection";
+import ServiceSection from "./servicesection/service_section";
 import ServicesInAction from "./serviceinaction/service_in_action";
 
 const ServicesScreen = () => {

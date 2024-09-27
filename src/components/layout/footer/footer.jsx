@@ -1,21 +1,9 @@
 import React from "react";
-import styles from "./footer.module.scss";
-import CustomContainer from "@/components/ui/custom_container/custom_container";
-import { Col, Image, Row } from "react-bootstrap";
 import Link from "next/link";
-import SocialMedia from "@/components/social_media/social_media";
+import styles from "./footer.module.scss";
+import { Col, Image, Row } from "react-bootstrap";
 import { EnvelopeAtFill, PhoneFill, PinMapFill } from "react-bootstrap-icons";
-
-export const DownloadSection = () => {
-  return (
-    <Col xs={12} md={6} lg={3}>
-      <div className={`${styles.sec} ${styles.sec1}`}>
-        <h4>Follow Us On</h4>
-        <SocialMedia />
-      </div>
-    </Col>
-  );
-};
+import CustomContainer from "@/components/ui/custom_container/custom_container";
 
 const CONTACTS = [
   {
@@ -42,7 +30,7 @@ const Footer = () => {
       <CustomContainer>
         <Row className={styles.row}>
           <Col xs={12} className={styles.centerContent}>
-            <Image src="/logo.png" alt="logo" width={180} />
+            <Image src="/whitelogo.png" alt="logo" width={180} />
           </Col>
         </Row>
 

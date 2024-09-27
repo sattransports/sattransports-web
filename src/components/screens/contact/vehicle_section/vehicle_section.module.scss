@@ -1,0 +1,29 @@
+.vehicleAttachmentSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 7rem;
+  width: 100%;
+  text-align: center;
+  color: black;
+  max-width: 1042px;
+
+  h2 {
+    font-size: 6rem;
+    font-weight: 600;
+  }
+
+  p {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+  }
+
+  @include respond-below(md) {
+    margin-top: 2.5rem;
+    max-width: 100%;
+
+    h2 {
+      font-size: 4rem;
+    }
+  }
+}
