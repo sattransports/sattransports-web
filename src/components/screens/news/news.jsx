@@ -2,11 +2,14 @@ import React from "react";
 import styles from "./news.module.scss";
 import CustomContainer from "@/components/ui/custom_container/custom_container";
 import { Image } from "react-bootstrap";
+import HeroSection from "./hero_section/hero_section";
 
 const NewsScreen = () => {
   return (
     <section className={styles.newsCard}>
       <CustomContainer>
+        <HeroSection />
+        <br />
         <div className={styles.newsCardContent}>
           <div className={styles.imageContainer}>
             <Image

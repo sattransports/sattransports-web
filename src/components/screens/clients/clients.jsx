@@ -21,12 +21,18 @@ function ClientSection() {
             unique story of collaboration, trust, and exceptional results.
           </p>
         </div>
-        <h2 className={styles.subHeading}>Our Clients Include:</h2>
+        <SectionHeading data="Our Clients Include:" variant={2} />
         <div className={styles.logoContainer}>
           {[
-            "https://cdn.builder.io/api/v1/image/assets/TEMP/e70d783965b8b7029aa671af4725871231da39fff224a048b57543adf34e9d2a?placeholderIfAbsent=true&apiKey=71133375415a4aeab1b4d2d16190b188",
-            "https://cdn.builder.io/api/v1/image/assets/TEMP/43dc5034eaf63b2587733d2d71f3f15ab785ab902850c2adb2bffaa6e0f842d9?placeholderIfAbsent=true&apiKey=71133375415a4aeab1b4d2d16190b188",
-            "https://cdn.builder.io/api/v1/image/assets/TEMP/0ed7b1ebe792bc22add2ee247c7926c155e579f8fed112faabd607cdbb77ccd2?placeholderIfAbsent=true&apiKey=71133375415a4aeab1b4d2d16190b188",
+            "/assets/clients/Gw logo.png",
+            "/assets/clients/color-logo.png",
+            "/assets/clients/hcl clr logo.png",
+            "/assets/clients/Atos logo copy.png",
+            "/assets/clients/boa logo copy.png",
+            "/assets/clients/logo-2048x486.png",
+            "/assets/clients/Raido final logo.png",
+            "/assets/clients/TCS_NewLogo_Final_RGB.png",
+            "/assets/clients/tp-main-logo-svg.png",
           ].map((src, index) => (
             <ClientLogo key={index} src={src} />
           ))}
