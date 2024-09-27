@@ -3,9 +3,6 @@
   padding-bottom: 10px;
 
   .left {
-    // display: flex;
-    // flex-direction: column;
-    // gap: 20px;
     padding-bottom: 30px;
 
     h3 {
@@ -22,16 +19,20 @@
   }
 
   .img {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     > img {
-      margin-bottom: 20px;
+      height: 100%; // Make image stretch
+      width: auto; // Keep the image's aspect ratio
     }
-    .logos {
-      display: flex;
-      justify-content: space-around;
-      img {
-        width: 48%;
-      }
-    }
+  }
+
+  // Wrap the left content and the image in a flex container
+  .row {
+    display: flex;
+    align-items: stretch; // Stretch both sides to the same height
   }
 
   @include respond-below(md) {

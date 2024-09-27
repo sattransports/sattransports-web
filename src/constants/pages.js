@@ -8,7 +8,7 @@ const PAGES = [
     href: "/about",
   },
   {
-    name: "Service",
+    name: "Services",
     href: "/services",
   },
   {

@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import svg from "../../../../../../public/assets/svg/mail.svg";
 import styles from "./joinsatteam.module.scss";
 import CustomButton from "@/components/ui/custom_button/custom_button";
 import CustomContainer from "@/components/ui/custom_container/custom_container";
@@ -17,7 +18,7 @@ const JoinTaxiTeam = () => {
               <div className={styles.joinIcon}>
                 <Image
                   loading="lazy"
-                  src=""
+                  src={svg}
                   alt="Join icon"
                   className={styles.iconImage}
                   width={24}

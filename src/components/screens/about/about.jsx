@@ -4,6 +4,8 @@ import styles from "./about.module.scss";
 import CustomContainer from "@/components/ui/custom_container/custom_container";
 import { Image } from "react-bootstrap";
 import WhyChooseUs from "./whychooseus/whychooseus";
+import ManagementTeam from "./management/management";
+import ImageCarousel from "./image_carousal/image_carousal";
 
 const AboutScreen = () => {
   const missionValuesData = [
@@ -74,6 +76,8 @@ const AboutScreen = () => {
           </div>
         </div>
         <WhyChooseUs />
+        <ManagementTeam />
+        <ImageCarousel />
       </CustomContainer>
     </main>
   );
