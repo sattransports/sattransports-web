@@ -62,9 +62,28 @@
 
     .extraInfo {
       margin-top: 40px;
+      display: grid; /* Use CSS Grid */
+      grid-template-columns: repeat(2, 1fr); /* Two equal-width columns */
+      grid-template-rows: auto auto; /* Automatically adjust row height */
+      gap: 20px; /* Add space between grid items */
+
+      @include respond-below(md) {
+        grid-template-columns: 1fr; /* Stack items in one column on small screens */
+        grid-template-rows: auto; /* Let each row size automatically */
+      }
 
       .infoBlock {
         margin-bottom: 20px;
+
+        h3 {
+          font-size: 20px; /* Adjust heading size */
+          font-weight: 600;
+        }
+
+        p {
+          font-size: 16px;
+          line-height: 1.5;
+        }
       }
     }
   }

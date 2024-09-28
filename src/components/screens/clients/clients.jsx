@@ -1,15 +1,31 @@
+import SectionHeading from "@/components/ui/section_heading/section_heading";
 import React from "react";
 import styles from "./clients.module.scss";
 import CustomContainer from "@/components/ui/custom_container/custom_container";
-import SectionHeading from "@/components/ui/section_heading/section_heading";
+import { Image } from "react-bootstrap";
 
-function ClientSection() {
+const ClientSection = () => {
+  const clientLogos = [
+    "/assets/clients/Atos logo copy.png",
+    "/assets/clients/boa logo copy.png",
+    "/assets/clients/color-logo.png",
+    "/assets/clients/logo-2048x486.png",
+    "/assets/clients/Gw logo.png",
+    "/assets/clients/hcl clr logo.png",
+    "/assets/clients/flex logo.png",
+    "/assets/clients/Raido final logo.png",
+    "/assets/clients/TCS_NewLogo_Final_RGB.png",
+    "/assets/clients/tp-main-logo-svg.png",
+    "/assets/clients/tech-mahindra.png",
+    "/assets/clients/mml.png",
+  ];
+
   return (
-    <section className={styles.clientSection}>
-      <CustomContainer>
-        <div className={styles.textContainer}>
-          <SectionHeading head="Our Valued Clients" />
-          <p className={styles.description}>
+    <CustomContainer>
+      <section className={styles.clientSection}>
+        <SectionHeading head="Our Valued Clients" />
+        <div className={styles.introText}>
+          <p>
             At SAT Travels, we are proud to collaborate with a diverse range of
             clients from across the globe. Our partnerships span various
             industries, from startups to well-established global enterprises,
@@ -21,24 +37,33 @@ function ClientSection() {
             unique story of collaboration, trust, and exceptional results.
           </p>
         </div>
-        <SectionHeading data="Our Clients Include:" variant={2} />
-        <div className={styles.logoContainer}>
-          {[
-            "/assets/clients/Gw logo.png",
-            "/assets/clients/color-logo.png",
-            "/assets/clients/hcl clr logo.png",
-            "/assets/clients/Atos logo copy.png",
-            "/assets/clients/boa logo copy.png",
-            "/assets/clients/logo-2048x486.png",
-            "/assets/clients/Raido final logo.png",
-            "/assets/clients/TCS_NewLogo_Final_RGB.png",
-            "/assets/clients/tp-main-logo-svg.png",
-          ].map((src, index) => (
-            <ClientLogo key={index} src={src} />
+
+        <h2 className={styles.subHeading}>Our Clients Include:</h2>
+
+        <div className={styles.clientsGrid}>
+          {clientLogos.map((src, index) => (
+            <div
+              key={index}
+              className={styles.clientLogo}
+              data-aos="slide-up"
+              data-aos-delay={`${index * 100}`}
+            >
+              <div className={styles.logoContainer}>
+                <div className={styles.logoItem}>
+                  <Image
+                    loading="lazy"
+                    src={src}
+                    alt={`Client logo ${index + 1}`}
+                    className={styles.logoImage}
+                  />
+                </div>
+              </div>
+            </div>
           ))}
         </div>
-        <div className={styles.footerText}>
-          <h2>Join Us on the Journey</h2>
+
+        <div className={styles.callToAction}>
+          <SectionHeading head="Join Us on the Journey" />
           <p>
             We're always eager to form new partnerships with companies that
             value efficiency, reliability, and innovation in travel management.
@@ -47,17 +72,9 @@ function ClientSection() {
             success.
           </p>
         </div>
-      </CustomContainer>
-    </section>
+      </section>
+    </CustomContainer>
   );
-}
-
-function ClientLogo({ src }) {
-  return (
-    <div className={styles.clientLogo}>
-      <img loading="lazy" src={src} alt="Client logo" />
-    </div>
-  );
-}
+};
 
 export default ClientSection;

@@ -1,64 +1,84 @@
 import React from "react";
 import styles from "./vehicle_form.module.scss";
+import CustomInput from "@/components/ui/custom_input/custom_input";
+import CustomButton from "@/components/ui/custom_button/custom_button";
 
 function VehicleAttachmentForm() {
   return (
     <form className={styles.form}>
       <h3>Attach Your Vehicle Today</h3>
       <div className={styles.formGroup}>
-        <input
+        <CustomInput
           type="text"
-          placeholder="Driver/Owner Name"
+          placeHolder="Driver/Owner Name"
           aria-label="Driver/Owner Name"
+          required
         />
-        <input
+        <CustomInput
           type="tel"
-          placeholder="Contact Number"
+          placeHolder="Contact Number"
           aria-label="Contact Number"
+          required
         />
       </div>
       <div className={styles.formGroup}>
-        <input type="email" placeholder="Email" aria-label="Email" />
-        <input
+        <CustomInput
+          type="email"
+          placeHolder="Email"
+          aria-label="Email"
+          required
+        />
+        <CustomInput
           type="text"
-          placeholder="Present City"
+          placeHolder="Present City"
           aria-label="Present City"
+          required
         />
       </div>
       <div className={styles.formGroup}>
-        <input
+        <CustomInput
           type="text"
-          placeholder="Vehicle Name"
+          placeHolder="Vehicle Name"
           aria-label="Vehicle Name"
+          required
         />
-        <input
+        <CustomInput
           type="text"
-          placeholder="Vehicle Type"
+          placeHolder="Vehicle Type"
           aria-label="Vehicle Type"
+          required
         />
       </div>
       <div className={styles.formGroup}>
-        <input type="text" placeholder="Fuel Type" aria-label="Fuel Type" />
-        <input
+        <CustomInput
           type="text"
-          placeholder="Registration Number"
+          placeHolder="Fuel Type"
+          aria-label="Fuel Type"
+          required
+        />
+        <CustomInput
+          type="text"
+          placeHolder="Registration Number"
           aria-label="Registration Number"
+          required
         />
       </div>
       <div className={styles.formGroup}>
-        <input
-          type="date"
-          placeholder="Registration Date"
+        <CustomInput
+          type="text"
+          placeHolder="Registration Date"
           aria-label="Registration Date"
+          required
         />
-        <input
-          type="file"
-          placeholder="Registration Certificate (RC)"
-          aria-label="Registration Certificate (RC)"
+        <CustomInput
+          type="text"
+          placeHolder="Passenger Capacity"
+          aria-label="Passenger Capacity"
+          required
         />
       </div>
       <div className={styles.submitSection}>
-        <button type="submit">Submit</button>
+        <CustomButton>Submit</CustomButton>
         <p>By submitting, you agree to our terms and conditions.</p>
       </div>
     </form>

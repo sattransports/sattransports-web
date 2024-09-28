@@ -34,13 +34,26 @@ const ContactScreen = () => {
               <div className={styles.infoBlock}>
                 <h3>Customer Support</h3>
                 <p>
-                  Need assistance with your booking? Our support team is here to
-                  help.
+                  Need assistance with your booking or have a question about our
+                  services? Our support team is here to help you every step of
+                  the way.
                 </p>
               </div>
               <div className={styles.infoBlock}>
                 <h3>Feedback & Suggestions</h3>
-                <p>Share your experience or suggestions to help us improve.</p>
+                <p>
+                  Your feedback is valuable to us. Share your experience or
+                  suggestions to help us improve our services and better meet
+                  your needs.
+                </p>
+              </div>
+              <div className={styles.infoBlock}>
+                <h3>Inquiries</h3>
+                <p>
+                  Have a question or looking for more information? Get in touch
+                  with us for any inquiries about our travel packages or
+                  corporate services.
+                </p>
               </div>
             </div>
           </div>

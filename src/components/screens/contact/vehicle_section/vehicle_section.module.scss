@@ -1,21 +1,25 @@
 .vehicleAttachmentSection {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; /* Center the content horizontally */
+  justify-content: center; /* Center the content vertically */
+  text-align: center;
   margin-top: 7rem;
   width: 100%;
-  text-align: center;
-  color: black;
   max-width: 1042px;
+  margin-left: auto; /* Center horizontally */
+  margin-right: auto; /* Center horizontally */
 
   h2 {
     font-size: 6rem;
     font-weight: 600;
+    margin-bottom: 1rem; /* Add margin to separate from paragraph */
   }
 
   p {
     margin-top: 0.5rem;
     font-size: 1rem;
+    max-width: 800px; /* Optional: limit width of the paragraph */
   }
 
   @include respond-below(md) {
