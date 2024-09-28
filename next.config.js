@@ -8,7 +8,11 @@ const nextConfig = {
     includePaths: [path.join(__dirname, "src/styles/scss")],
     prependData:
       '@import "_variables.scss"; @import "_mixins.scss"; @import "_media_queries.scss";',
+    
   },
+  images: {
+    domains: ['images.pexels.com']
+  }
 };
 
 module.exports = withVideos(nextConfig);

@@ -9,20 +9,36 @@
   &.left {
     .imageContainer {
       width: 40%;
+      @include respond-below(md){
+        width: 100%;
+      }
     }
     .textContainer {
       width: 60%;
+      @include respond-below(md){
+        width: 100%;
+      }
     }
   }
 
   &.right {
     flex-direction: row-reverse;
+    @include respond-below(md){
+    flex-direction: column;
+    }
+    
 
     .imageContainer {
       width: 35%;
+      @include respond-below(md){
+        width: 100%;
+      }
     }
     .textContainer {
       width: 65%;
+      @include respond-below(md){
+        width: 100%;
+      }
     }
   }
 }
