@@ -1,12 +1,12 @@
 .contactSection {
-  margin-top: 100px;
+  margin-top: 200px;
   max-width: 1240px;
   width: 100%;
   margin-left: auto;
   margin-right: auto; // Center the content horizontally.
 
   @include respond-below(md) {
-    margin-top: 40px;
+    margin-top: 150px;
     max-width: 100%; // Full width for mobile screens.
   }
 

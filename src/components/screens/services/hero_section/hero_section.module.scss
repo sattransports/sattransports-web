@@ -35,6 +35,7 @@
     font-weight: 600; // Bold font for the heading.
 
     @include respond-below(md) {
+      margin-top: 45px;
       font-size: 4rem; // Smaller font size for mobile.
       max-width: 100%;
     }
