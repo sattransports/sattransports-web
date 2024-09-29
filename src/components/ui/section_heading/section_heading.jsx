@@ -5,14 +5,13 @@ import { Image } from "react-bootstrap";
 
 const SectionHeading = ({ head = "", variant = 1 }) => {
   return (
-    <div className={`${styles.sectionHead} ${styles[`v${variant}`]}`}
+    <div className={`${styles.sectionHead} ${styles[`v${variant}`]}${styles.container}`}
       data-aos='fade-up'
-    
     >
       {head && (
         <div>
           <h1 className={fonts.sofadi}>{head}</h1>
-          <hr/>
+          {/* <hr/> */}
         </div>
       )}
     </div>
