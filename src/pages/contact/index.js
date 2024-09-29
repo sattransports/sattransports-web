@@ -1,8 +1,8 @@
-import ContactScreen from "@/components/screens/contact/contact";
+import ContactScreen from "@/components/screens/contact/contact"; // Importing the ContactScreen component for the Contact Us page.
 import React from "react";
 
 const ContactPage = () => {
-  return <ContactScreen />;
+  return <ContactScreen />; // Rendering the ContactScreen component.
 };
 
-export default ContactPage;
+export default ContactPage; // Exporting ContactPage.

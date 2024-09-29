@@ -4,29 +4,29 @@
   align-items: center;
   margin-top: 4rem;
   width: 100%;
-  max-width: 1240px;
+  max-width: 1240px; // Max-width to control layout.
 
   @include respond-below(md) {
-    margin-top: 2.5rem;
+    margin-top: 2.5rem; // Adjust margin for mobile.
   }
 
   .introText {
     text-align: center;
-    color: $color_1;
+    color: $color_1; // Assuming $color_1 is defined in variables.
     margin-top: 1rem;
 
     @include respond-below(md) {
-      width: 100%;
+      width: 100%; // Full width on mobile.
     }
 
     p {
       font-size: 1rem;
-      line-height: 1.75rem;
+      line-height: 1.75rem; // Line height for better readability.
     }
   }
 
   .subHeading {
-    align-self: start;
+    align-self: start; // Aligns the sub-heading to the start of the section.
     margin-top: 5rem;
     font-size: 2rem;
     font-weight: 600;
@@ -39,14 +39,14 @@
 
   .clientsGrid {
     display: flex;
-    flex-wrap: wrap; /* Allow logos to wrap on larger screens */
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-between; // Space between client logos.
     margin-top: 4rem;
     width: 100%;
-    min-height: 953px;
+    min-height: 953px; // Ensures a minimum height for the grid.
 
     @include respond-below(md) {
-      flex-direction: column;
+      flex-direction: column; // Stack logos on mobile.
       margin-top: 1.5rem;
     }
   }
@@ -54,10 +54,10 @@
   .clientLogo {
     overflow: hidden;
     padding-bottom: 2.5rem;
-    width: calc(33.333% - 1.25rem);
+    width: calc(33.333% - 1.25rem); // Each logo takes a third of the width.
 
     @include respond-below(md) {
-      width: 100%;
+      width: 100%; // Full width on mobile.
       padding-bottom: 1.5rem;
     }
 
@@ -66,14 +66,14 @@
       gap: 1.25rem;
 
       @include respond-below(md) {
-        flex-direction: column;
+        flex-direction: column; // Stack container on mobile.
       }
     }
 
     .logoItem {
       flex: 1 1 auto;
       display: flex;
-      justify-content: center;
+      justify-content: center; // Center the logo horizontally.
 
       @include respond-below(md) {
         width: 100%;
@@ -81,14 +81,13 @@
     }
 
     .logoImage {
-      width: 100%; /* Ensures the image fills the container */
-      height: auto; /* Ensures the image keeps its aspect ratio */
-      max-width: 600px; /* Increased to make the image fuller */
-      object-fit: contain; /* Ensures the entire image is shown without distortion */
+      width: 100%;
+      height: auto;
+      max-width: 600px; // Max width for large screens.
+      object-fit: contain; // Preserve aspect ratio.
 
-      /* Optionally, you can tweak these values to make the image larger on mobile */
       @include respond-below(md) {
-        max-width: 400px; /* Reduce size for smaller screens */
+        max-width: 400px; // Smaller max-width on mobile.
       }
     }
   }

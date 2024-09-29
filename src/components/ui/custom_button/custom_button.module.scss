@@ -1,22 +1,22 @@
 .customButton {
-  padding: 10px 20px;
-  outline: none;
-  border-radius: 10px;
-  width: fit-content;
+  padding: 10px 20px; // Padding inside the button.
+  outline: none; // Remove default outline.
+  border-radius: 10px; // Rounded corners for the button.
+  width: fit-content; // Button width adjusts to content.
 
+  // Variant 1 styling for the button.
   &.v1 {
-    background-color: $color_1;
-    border: none;
-    color: white !important;
-    
-    a{
-      color: white !important;
+    background-color: $color_1; // Primary background color.
+    border: none; // No border.
+    color: white !important; // White text color.
 
+    a {
+      color: white !important; // Ensure links inside the button are also white.
     }
 
-    &:hover{
-        background-color: $color_2;
-        color: $color_1 !important;
+    &:hover {
+      background-color: $color_2; // Change background color on hover.
+      color: $color_1 !important; // Change text color on hover.
     }
   }
 }

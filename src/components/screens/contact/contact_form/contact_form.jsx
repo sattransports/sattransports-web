@@ -1,36 +1,39 @@
-import React from "react";
-import styles from "./contact_form.module.scss";
-import CustomInput from "@/components/ui/custom_input/custom_input";
-import CustomTextArea from "@/components/ui/custom_textarea/custom_textarea";
-import CustomButton from "@/components/ui/custom_button/custom_button";
+import React from "react"; // React import.
+import styles from "./contact_form.module.scss"; // SCSS module for styling.
+import CustomInput from "@/components/ui/custom_input/custom_input"; // Custom Input component.
+import CustomTextArea from "@/components/ui/custom_textarea/custom_textarea"; // Custom TextArea component.
+import CustomButton from "@/components/ui/custom_button/custom_button"; // Custom Button component.
 
+// Contact form component for user inquiries.
 const ContactForm = () => {
   return (
     <form
       className={styles.contactForm}
       onSubmit={(e) => {
-        e.preventDefault();
+        e.preventDefault(); // Prevents the default form submission behavior.
+        // Add form submission logic here, e.g., API call to send the form data.
       }}
     >
+      {/* Form heading */}
       <h2>Get in Touch</h2>
 
-      {/* First Name and Last Name */}
+      {/* Row for first name and last name inputs */}
       <div className={styles.formRow}>
         <CustomInput placeHolder="First Name*" required />
         <CustomInput placeHolder="Last Name*" required />
       </div>
 
-      {/* Email */}
+      {/* Row for email input */}
       <div className={styles.formRow}>
         <CustomInput placeHolder="Email*" required type="email" />
       </div>
 
-      {/* Mobile Number */}
+      {/* Row for mobile number input */}
       <div className={styles.formRow}>
         <CustomInput placeHolder="Mobile Number*" required type="tel" />
       </div>
 
-      {/* Label and TextArea in one line */}
+      {/* Textarea row for message input */}
       <div className={styles.formRowInline}>
         <label htmlFor="message" className={styles.formLabel}>
           How can we help you?
@@ -43,10 +46,10 @@ const ContactForm = () => {
         />
       </div>
 
-      {/* Submit Button */}
+      {/* Submit button */}
       <CustomButton type="submit">Submit</CustomButton>
 
-      {/* Terms & Conditions */}
+      {/* Disclaimer message */}
       <p>By submitting, you agree to our terms and conditions.</p>
     </form>
   );

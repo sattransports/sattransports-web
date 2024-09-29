@@ -1,87 +1,93 @@
 .servicesScreen {
-  padding: 50px 0;
+  padding: 50px 0; // Padding for the main container.
 
   .cap {
     margin-bottom: 20px;
     font-size: 18px;
     color: rgb(72, 72, 72);
-    text-align: center;
+    text-align: center; // Center-align text.
   }
 
   h5 {
     display: inline;
-    font-size: 18px;
+    font-size: 18px; // Font size for h5 tags.
   }
 
   li {
-    margin-bottom: 10px;
+    margin-bottom: 10px; // Space between list items.
   }
 
   .service {
     display: flex;
-    gap: 0px;
-    margin-bottom: 100px;
+    gap: 0px; // No gap between items.
+    margin-bottom: 100px; // Space between services.
+
     .text {
       margin-bottom: 30px;
-      width: 60%;
+      width: 60%; // Text container takes up 60% width.
+
       h2 {
-        font-size: 30px;
+        font-size: 30px; // Font size for service title.
       }
+
       p {
-        font-size: 17px;
+        font-size: 17px; // Font size for service description.
       }
 
       hr {
         width: 150px;
         height: 5px;
         border: none;
-        background-color: $color_1;
+        background-color: $color_1; // Primary color for horizontal rule.
         opacity: 1;
       }
     }
 
     &.right {
-      flex-direction: row-reverse;
+      flex-direction: row-reverse; // Reverse layout if image is on the right.
     }
+
     .img {
-      width: 40%;
+      width: 40%; // Image container takes up 40% width.
       margin-top: -100px;
       margin-left: auto;
       margin-right: auto;
-      @include flexCenter;
+
+      @include flexCenter; // Flexbox centering.
 
       &.noMargin {
-        margin-top: -35px;
-        // margin-bottom: 50px;
+        margin-top: -35px; // Adjust margin if needed.
       }
     }
   }
 
   .gap {
-    margin-bottom: 70px;
+    margin-bottom: 70px; // Gap between sections.
   }
 
+  // Responsive design adjustments for large screens and below.
   @include respond-below(lg) {
     .cap {
-      // margin-bottom: 50px;
       font-size: 17px;
     }
+
     .service {
-      flex-direction: column !important;
+      flex-direction: column !important; // Stack items vertically on smaller screens.
       align-items: center;
+
       .text {
-        width: 100%;
+        width: 100%; // Text takes full width on smaller screens.
       }
 
       .img {
-        width: 100%;
+        width: 100%; // Image takes full width on smaller screens.
         margin-top: 0;
         margin-bottom: 0;
       }
     }
 
     .gap {
-      margin-bottom: 40px;
+      margin-bottom: 40px; // Reduce gap between sections on smaller screens.
     }
   }
 }

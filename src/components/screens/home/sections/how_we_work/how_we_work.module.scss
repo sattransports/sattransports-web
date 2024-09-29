@@ -1,0 +1,44 @@
+.aboutSection {
+  padding-top: 30px;
+  padding-bottom: 10px;
+
+  .left {
+    padding-bottom: 30px; // Space below text content.
+
+    h3 {
+      font-size: 30px; // Heading size.
+    }
+
+    hr {
+      width: 150px;
+      height: 5px;
+      border: none;
+      background-color: $color_1; // Themed color for the divider.
+      opacity: 1;
+    }
+  }
+
+  .img {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    > img {
+      height: 100%; // Stretch image.
+      width: auto; // Maintain aspect ratio.
+    }
+  }
+
+  // Ensuring both sides of the row are aligned vertically.
+  .row {
+    display: flex;
+    align-items: stretch;
+  }
+
+  @include respond-below(md) {
+    .img {
+      padding: 0; // Remove padding on smaller screens.
+    }
+  }
+}

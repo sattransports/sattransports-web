@@ -1,87 +1,90 @@
 .contactForm {
-  background-color: $color_2;
+  background-color: $color_2; // Background color from SCSS variables.
   padding: 40px;
-  border-radius: 20px;
+  border-radius: 20px; // Rounded corners.
   max-width: 700px;
-  margin-left: auto;
+  margin-left: auto; // Center align the form horizontally.
   margin-right: auto;
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1); // Subtle shadow effect.
 
   @include respond-below(md) {
-    padding: 20px;
-    max-width: 100%;
+    padding: 20px; // Adjust padding for mobile screens.
+    max-width: 100%; // Full width on smaller screens.
   }
 
   h2 {
-    text-align: center;
-    font-size: 32px;
+    text-align: center; // Center align the heading.
+    font-size: 32px; // Large font size for the heading.
   }
 
   .formRow {
-    display: flex;
-    gap: 20px;
+    display: flex; // Flex layout for row of inputs.
+    gap: 20px; // Space between the inputs.
     margin-top: 20px;
 
     @include respond-below(md) {
-      flex-direction: column;
+      flex-direction: column; // Stack inputs vertically on smaller screens.
     }
 
     input,
     select,
     textarea {
-      padding: 12px;
-      border-radius: 10px;
-      border: 1px solid #ccc;
-      width: 100%;
+      padding: 12px; // Padding inside form fields.
+      border-radius: 10px; // Rounded corners for form fields.
+      border: 1px solid #ccc; // Light gray border for form fields.
+      width: 100%; // Full width form fields.
     }
   }
 
   .formRowInline {
     display: flex;
-    align-items: center; /* Align label and textarea vertically */
-    gap: 20px;
+    align-items: center; // Vertically align label and textarea.
+    gap: 20px; // Space between the label and textarea.
     margin-top: 20px;
 
     @include respond-below(md) {
-      flex-direction: column;
+      flex-direction: column; // Stack label and textarea vertically on smaller screens.
     }
 
     label {
-      width: 30%; /* Adjust this value to control label width */
-      font-size: 16px;
+      width: 30%; // Label width as a percentage of the row.
+      font-size: 16px; // Standard font size for label.
     }
 
     textarea {
-      flex-grow: 1; /* Let textarea fill the remaining space */
-      height: 120px;
+      flex-grow: 1; // Let textarea fill the remaining space.
+      height: 120px; // Fixed height for textarea.
     }
   }
 
   button {
-    background-color: $color_1;
-    color: $color_2;
-    padding: 10px 20px;
-    border-radius: 10px;
+    background-color: $color_1; // Primary button background color from SCSS variables.
+    color: $color_2; // Button text color.
+    padding: 10px 20px; // Padding inside the button.
+    border-radius: 10px; // Rounded button.
     margin-top: 20px;
     display: block;
-    width: fit-content;
-    margin-left: auto;
+    width: fit-content; // Button width adjusts based on content size.
+    margin-left: auto; // Center the button horizontally.
     margin-right: auto;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    cursor: pointer; // Pointer cursor on hover.
+    transition: background-color 0.3s ease; // Smooth transition for hover effect.
 
     &:hover {
-      background-color: darken($color_1, 10%);
+      background-color: darken(
+        $color_1,
+        10%
+      ); // Darken the button color on hover.
     }
 
     &:active {
-      transform: scale(0.98);
+      transform: scale(0.98); // Slight shrink effect on button press.
     }
   }
 
   p {
-    text-align: center;
+    text-align: center; // Center align the disclaimer text.
     margin-top: 10px;
-    font-size: 14px;
+    font-size: 14px; // Smaller font size for disclaimer text.
   }
 }

@@ -1,0 +1,72 @@
+.whyChooseUs {
+  margin-top: 2rem;
+  background-color: rgb(237, 237, 237); // Light background color.
+  margin-bottom: 3rem;
+
+  .heading {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 600;
+    color: $color_1; // Assuming `$color_1` is defined in your SCSS variables.
+
+    @include respond-below(md) {
+      font-size: 2rem; // Smaller font size on smaller screens.
+    }
+  }
+}
+
+.featureCard {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 1rem;
+
+  @include respond-below(md) {
+    flex-direction: column; // Stack the content on smaller screens.
+  }
+
+  &.reverse {
+    flex-direction: row-reverse; // Reverse the order of content.
+
+    @include respond-below(md) {
+      flex-direction: column; // Ensure column layout on small screens.
+    }
+  }
+
+  .image {
+    width: 50%;
+    object-fit: contain;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    @include respond-below(md) {
+      width: 100%; // Full width on smaller screens.
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+
+    @include respond-below(md) {
+      width: 100%;
+      text-align: center; // Center content on smaller screens.
+    }
+
+    .title {
+      font-size: 1.75rem;
+      font-weight: 600;
+
+      @include respond-below(md) {
+        font-size: 1.5rem;
+      }
+    }
+
+    .description {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      color: #333; // Dark text for contrast.
+    }
+  }
+}

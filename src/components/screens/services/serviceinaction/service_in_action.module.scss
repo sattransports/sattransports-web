@@ -5,6 +5,7 @@
   .heading {
     font-size: 48px;
     font-weight: 600;
+
     @include respond-below(md) {
       font-size: 36px;
     }
@@ -12,13 +13,13 @@
 
   .row {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Create three equal columns */
-    grid-gap: 20px; /* Gap between grid items */
+    grid-template-columns: repeat(3, 1fr); // Three equal columns.
+    grid-gap: 20px; // Space between grid items.
     margin-top: 20px;
     align-items: center;
 
     @include respond-below(md) {
-      grid-template-columns: 1fr; /* Stack items vertically on small screens */
+      grid-template-columns: 1fr; // Stack items vertically on small screens.
       grid-gap: 20px;
     }
   }
@@ -30,60 +31,72 @@
   }
 
   .serviceBlock {
-    background-color: #f3f3f3;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: #f3f3f3; // Light background for service blocks.
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); // Subtle shadow for depth.
     border-radius: 10px;
+
     @include respond-below(md) {
       width: 100% !important;
       margin-top: 10px;
     }
+
     img {
-      width: 100% ;
+      width: 100%;
       height: auto;
-      border-radius: 10px;
+      border-radius: 10px; // Rounded corners for images.
     }
   }
 
   /* Custom widths for service blocks */
-  .width295, .width295 img {
+  .width295,
+  .width295 img {
     width: 306px;
     height: 200px;
+
     @include respond-below(md) {
       width: 100%;
       height: 200px;
     }
   }
 
-  .width610 , .width610 img {
+  .width610,
+  .width610 img {
     width: 610px;
     height: 200px;
+
     @include respond-below(md) {
       width: 100%;
       height: 200px;
     }
   }
 
-  .width715,.width715 img {
+  .width715,
+  .width715 img {
     width: 715px;
     height: 500px;
+
     @include respond-below(md) {
       width: 100%;
       height: 200px;
     }
   }
 
-  .width530height300,.width530height300  img {
+  .width530height300,
+  .width530height300 img {
     width: 530px;
     height: 300px;
+
     @include respond-below(md) {
       width: 100%;
       height: 200px;
     }
   }
 
-  .width530height175,.width530height175 img {
+  .width530height175,
+  .width530height175 img {
     width: 530px;
     height: 175px;
+
     @include respond-below(md) {
       width: 100%;
       height: 200px;

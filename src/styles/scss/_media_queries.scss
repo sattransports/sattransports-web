@@ -1,91 +1,101 @@
 //
-//  MEDIA QUERIES
+// MEDIA QUERIES
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-// A map of breakpoints.
+// Define a map of breakpoints that will be used throughout the application
+// to ensure consistent responsive behavior. Breakpoints are set for various
+// screen sizes like extra small (xs), small (sm), medium (md), large (lg), etc.
 $breakpoints: (
   xs: 0,
+  // Extra small: 0px and up
   sm: 576px,
+  // Small: 576px and up
   md: 768px,
+  // Medium: 768px and up
   lg: 992px,
+  // Large: 992px and up
   xl: 1200px,
+  // Extra large: 1200px and up
   xxl: 1400px,
+  // Double extra large: 1400px and up
 );
 
 //
-//  RESPOND ABOVE
+// RESPOND ABOVE
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-// @include respond-above(sm) {}
+// A mixin to apply styles for screen sizes above a specific breakpoint.
+// Usage: @include respond-above(sm) {}
+// This will apply styles to screen sizes starting from 576px (small) and above.
 @mixin respond-above($breakpoint) {
-  // If the breakpoint exists in the map.
+  // Check if the provided breakpoint exists in the breakpoints map
   @if map-has-key($breakpoints, $breakpoint) {
-    // Get the breakpoint value.
+    // Get the value of the breakpoint (e.g., 576px for sm)
     $breakpoint-value: map-get($breakpoints, $breakpoint);
 
-    // Write the media query.
+    // Create a media query for screens wider than the given breakpoint
     @media (min-width: $breakpoint-value) {
-      @content;
+      @content; // The content inside this media query
     }
 
-    // If the breakpoint doesn't exist in the map.
+    // If the breakpoint doesn't exist, log a warning in the console
   } @else {
-    // Log a warning.
     @warn 'Invalid breakpoint: #{$breakpoint}.';
   }
 }
 
 //
-//  RESPOND BELOW
+// RESPOND BELOW
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-// @include respond-below(sm) {}
+// A mixin to apply styles for screen sizes below a specific breakpoint.
+// Usage: @include respond-below(sm) {}
+// This will apply styles to screen sizes below 576px (small).
 @mixin respond-below($breakpoint) {
-  // If the breakpoint exists in the map.
+  // Check if the provided breakpoint exists in the breakpoints map
   @if map-has-key($breakpoints, $breakpoint) {
-    // Get the breakpoint value.
+    // Get the value of the breakpoint (e.g., 576px for sm)
     $breakpoint-value: map-get($breakpoints, $breakpoint);
 
-    // Write the media query.
+    // Create a media query for screens smaller than the given breakpoint
     @media (max-width: ($breakpoint-value - 1)) {
-      @content;
+      @content; // The content inside this media query
     }
 
-    // If the breakpoint doesn't exist in the map.
+    // If the breakpoint doesn't exist, log a warning in the console
   } @else {
-    // Log a warning.
     @warn 'Invalid breakpoint: #{$breakpoint}.';
   }
 }
 
 //
-//  RESPOND BETWEEN
+// RESPOND BETWEEN
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-// @include respond-between(sm, md) {}
+// A mixin to apply styles for screen sizes between two specific breakpoints.
+// Usage: @include respond-between(sm, md) {}
+// This will apply styles for screen sizes between 576px (small) and 768px (medium).
 @mixin respond-between($lower, $upper) {
-  // If both the lower and upper breakpoints exist in the map.
+  // Check if both the lower and upper breakpoints exist in the map
   @if map-has-key($breakpoints, $lower) and map-has-key($breakpoints, $upper) {
-    // Get the lower and upper breakpoints.
+    // Get the values for both the lower and upper breakpoints
     $lower-breakpoint: map-get($breakpoints, $lower);
     $upper-breakpoint: map-get($breakpoints, $upper);
 
-    // Write the media query.
+    // Create a media query for screens between the two breakpoints
     @media (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint - 1)) {
-      @content;
+      @content; // The content inside this media query
     }
 
-    // If one or both of the breakpoints don't exist.
+    // If one or both breakpoints are invalid, log appropriate warnings
   } @else {
-    // If lower breakpoint is invalid.
+    // Check if the lower breakpoint is invalid and log a warning
     @if (map-has-key($breakpoints, $lower) == false) {
-      // Log a warning.
       @warn 'Your lower breakpoint was invalid: #{$lower}.';
     }
 
-    // If upper breakpoint is invalid.
+    // Check if the upper breakpoint is invalid and log a warning
     @if (map-has-key($breakpoints, $upper) == false) {
-      // Log a warning.
       @warn 'Your upper breakpoint was invalid: #{$upper}.';
     }
   }

@@ -43,7 +43,7 @@
           width: 100%;
           height: auto;
           border-radius: 8px;
-          box-shadow: 0px 4px 45px rgba(0, 0, 0, 0.11);
+          box-shadow: 0px 4px 45px rgba(0, 0, 0, 0.11); // Image shadow for depth.
         }
       }
 
@@ -56,7 +56,7 @@
         .newsTitle {
           font-size: 1.875rem;
           font-weight: 600;
-          color: $color_1;
+          color: $color_1; // Primary theme color for the title.
 
           @include respond-below(md) {
             font-size: 1.5rem;
@@ -74,7 +74,7 @@
           justify-content: space-between;
           align-items: center;
           padding: 1rem 2rem;
-          background-color: $color_2;
+          background-color: $color_2; // Secondary theme color for the button.
           border-radius: 8px;
           font-size: 1.25rem;
           font-weight: 500;

@@ -1,6 +1,7 @@
-import React from "react";
-import styles from "./marquee.module.scss"; // Import your SCSS styles
+import React from "react"; // React import.
+import styles from "./marquee.module.scss"; // SCSS module for styling.
 
+// MarqueeComponent for displaying scrolling text with icons.
 const MarqueeComponent = () => {
   const items = [
     "Daily Office Commute",
@@ -15,17 +16,17 @@ const MarqueeComponent = () => {
 
   return (
     <div className={styles.marqueeContainer}>
-      {/* Container for marquee */}
       <div className={styles.marqueeWrapper}>
         <div className={styles.marqueeContent}>
           {items.map((item, index) => (
             <React.Fragment key={item}>
-              <div className={styles.marqueeItem}>{item}</div>
-              {index < 7 && (
+              <div className={styles.marqueeItem}>{item}</div>{" "}
+              {/* Marquee text */}
+              {index < 7 && ( // Render star image between items except after the last one.
                 <img
                   loading="lazy"
-                  src="/assets/star.svg"
-                  alt=""
+                  src="/assets/home/star.svg"
+                  alt="" // Decorative image, no alt text needed.
                   className={styles.marqueeImage}
                 />
               )}

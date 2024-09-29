@@ -1,16 +1,18 @@
-import React from "react";
-import styles from "./contact.module.scss";
-import ContactForm from "./contact_form/contact_form";
-import CustomContainer from "@/components/ui/custom_container/custom_container";
-import { EnvelopeAtFill, PhoneFill, PinMapFill } from "react-bootstrap-icons";
-import LocationSection from "./location/location";
-import VehicleAttachmentSection from "./vehicle_section/vehicle_section";
+import React from "react"; // React import.
+import styles from "./contact.module.scss"; // SCSS module for styling.
+import ContactForm from "./contact_form/contact_form"; // Contact form component.
+import CustomContainer from "@/components/ui/custom_container/custom_container"; // Custom container for layout.
+import { EnvelopeAtFill, PhoneFill } from "react-bootstrap-icons"; // Bootstrap icons for email and phone.
+import LocationSection from "./location/location"; // Location section component.
+import VehicleAttachmentSection from "./vehicle_section/vehicle_section"; // Vehicle attachment section component.
 
+// Main Contact Screen component.
 const ContactScreen = () => {
   return (
     <main className={styles.contactSection}>
       <CustomContainer>
         <div className={styles.contactContent}>
+          {/* Left side: Contact details and extra info */}
           <div className={styles.contactDetails}>
             <div className={styles.contactHeading}>
               <h2>Contact Us</h2>
@@ -20,16 +22,20 @@ const ContactScreen = () => {
                 Reach out to us, and we'll respond as soon as we can.
               </p>
             </div>
+
+            {/* Contact Info Section with phone and email */}
             <div className={styles.contactInfo}>
               <div className={styles.contactItem}>
-                <PhoneFill />
-                <span>831-9929-86700</span>
+                <PhoneFill /> {/* Phone icon */}
+                <span>831-9929-86700</span> {/* Phone number */}
               </div>
               <div className={styles.contactItem}>
-                <EnvelopeAtFill />
-                <span>contact@domain.com</span>
+                <EnvelopeAtFill /> {/* Email icon */}
+                <span>contact@domain.com</span> {/* Email address */}
               </div>
             </div>
+
+            {/* Additional Info Blocks */}
             <div className={styles.extraInfo}>
               <div className={styles.infoBlock}>
                 <h3>Customer Support</h3>
@@ -57,10 +63,14 @@ const ContactScreen = () => {
               </div>
             </div>
           </div>
+
+          {/* Right side: Contact form */}
           <div className={styles.formContainer}>
-            <ContactForm />
+            <ContactForm /> {/* Contact form component */}
           </div>
         </div>
+
+        {/* Location and Vehicle Attachment sections */}
         <LocationSection />
         <VehicleAttachmentSection />
       </CustomContainer>

@@ -1,9 +1,9 @@
 .customInput {
-  padding: 8px 10px;
+  padding: 8px 10px; // Base padding for the input
 
   &.v1 {
     border: none;
-    border-bottom: 2px solid rgb(190, 190, 190);
+    border-bottom: 2px solid rgb(190, 190, 190); // Light gray bottom border
     outline: none;
     background-color: white;
 
@@ -11,22 +11,22 @@
     &.focus,
     &:focus-visible,
     &:hover {
-      border-bottom: 2px solid $color_1;
+      border-bottom: 2px solid $color_1; // Change border color on focus/hover
     }
 
     &[type="submit"] {
-      background-color: $color_2;
+      background-color: $color_2; // Submit button background color
       border: none;
-      color: $color_1;
+      color: $color_1; // Text color for submit button
       padding: 14px 0;
 
       &:hover {
         background-color: $color_1;
-        color: $color_2;
+        color: $color_2; // Swap colors on hover
       }
 
-      &:active{
-        transform: scale(0.95);
+      &:active {
+        transform: scale(0.95); // Shrink the button slightly on click
       }
     }
   }

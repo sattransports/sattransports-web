@@ -1,59 +1,49 @@
-import SectionHeading from "@/components/ui/section_heading/section_heading";
-import React from "react";
-import styles from "./clients.module.scss";
-import CustomContainer from "@/components/ui/custom_container/custom_container";
-import { Image } from "react-bootstrap";
+import React from "react"; // Importing React.
+import { Image } from "react-bootstrap"; // Bootstrap Image component.
+import styles from "./clients.module.scss"; // SCSS module for styling.
+import SectionHeading from "@/components/ui/section_heading/section_heading"; // Section heading component.
+import CustomContainer from "@/components/ui/custom_container/custom_container"; // Custom container for layout.
+import clients from "@/constants/clients"; // Clients data.
 
+// Client section component that displays the client logos and some call to action.
 const ClientSection = () => {
-  const clientLogos = [
-    "/assets/clients/Atos logo copy.png",
-    "/assets/clients/boa logo copy.png",
-    "/assets/clients/color-logo.png",
-    "/assets/clients/logo-2048x486.png",
-    "/assets/clients/Gw logo.png",
-    "/assets/clients/hcl clr logo.png",
-    "/assets/clients/flex logo.png",
-    "/assets/clients/Raido final logo.png",
-    "/assets/clients/TCS_NewLogo_Final_RGB.png",
-    "/assets/clients/tp-main-logo-svg.png",
-    "/assets/clients/tech-mahindra.png",
-    "/assets/clients/mml.png",
-  ];
-
   return (
     <CustomContainer>
       <section className={styles.clientSection}>
+        {/* Heading for the section */}
         <SectionHeading head="Our Valued Clients" />
+
+        {/* Introduction text about the clients */}
         <div className={styles.introText}>
           <p>
-            At SAT Travels, we are proud to collaborate with a diverse range of
-            clients from across the globe. Our partnerships span various
-            industries, from startups to well-established global enterprises,
-            all sharing a common goal: to achieve success through innovative
-            travel and logistics solutions.
-            <br />
-            Below is a showcase of some of the incredible companies we've had
-            the privilege of working with. Each of these logos represents a
-            unique story of collaboration, trust, and exceptional results.
+            At SAT, we hold our clients in the highest regard, recognizing that
+            their trust and satisfaction are the cornerstone of our success.
+            Every partnership we forge is built on a foundation of mutual
+            respect, reliability, and dedication to excellence. We pride
+            ourselves on maintaining long-lasting relationships, ensuring that
+            our transportation solutions consistently meet the unique needs of
+            each company we serve.
           </p>
         </div>
 
+        {/* Sub-heading introducing the clients */}
         <h2 className={styles.subHeading}>Our Clients Include:</h2>
 
+        {/* Grid to display the logos of the clients */}
         <div className={styles.clientsGrid}>
-          {clientLogos.map((src, index) => (
+          {clients.map((client, index) => (
             <div
               key={index}
               className={styles.clientLogo}
-              data-aos="slide-up"
-              data-aos-delay={`${index * 100}`}
+              data-aos="slide-up" // AOS animation on scroll.
+              data-aos-delay={`${index * 100}`} // Delay increases per client for staggered animation.
             >
               <div className={styles.logoContainer}>
                 <div className={styles.logoItem}>
                   <Image
                     loading="lazy"
-                    src={src}
-                    alt={`Client logo ${index + 1}`}
+                    src={client.src}
+                    alt={`Client logo ${index + 1}`} // Alt text for accessibility.
                     className={styles.logoImage}
                   />
                 </div>
@@ -62,14 +52,16 @@ const ClientSection = () => {
           ))}
         </div>
 
+        {/* Call to action section */}
         <div className={styles.callToAction}>
           <SectionHeading head="Join Us on the Journey" />
           <p>
-            We're always eager to form new partnerships with companies that
-            value efficiency, reliability, and innovation in travel management.
-            If you're looking for a team that's dedicated to delivering top-tier
-            travel solutions, let's work together to make your journey a
-            success.
+            At SAT, we believe that every successful journey is built on strong,
+            lasting partnerships. By choosing us, you're choosing a team that
+            values efficiency, reliability, and innovation just as much as you
+            do. We invite you to join our growing network of esteemed partners,
+            where trust and exceptional service are the driving forces behind
+            everything we do.
           </p>
         </div>
       </section>
