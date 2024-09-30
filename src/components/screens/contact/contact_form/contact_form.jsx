@@ -1,27 +1,137 @@
-import CustomInput from "@/components/ui/custom_input/custom_input";
-import React from "react";
-import styles from "./contact_form.module.scss";
-import CustomTextArea from "@/components/ui/custom_textarea/custom_textarea";
+import React, { useState } from "react"; // React import.
+import styles from "./contact_form.module.scss"; // SCSS module for styling.
+import CustomInput from "@/components/ui/custom_input/custom_input"; // Custom Input component.
+import CustomTextArea from "@/components/ui/custom_textarea/custom_textarea"; // Custom TextArea component.
+import { ToastContainer, toast } from "react-toastify"; // Import Toastify
+import "react-toastify/dist/ReactToastify.css"; // Import Toastify CSS
 
 const ContactForm = () => {
+  // State to manage form data
+  const [formData, setFormData] = useState({
+    formType: "contact",
+    firstName: "",
+    lastName: "",
+    email: "",
+    mobile: "",
+    message: "",
+  });
+
+  // Handle input changes to update form state
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  // Handle form submission and call the API
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Prevent default form submission
+    const response = await fetch("/api/form", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData), // Send the form data as JSON
+    });
+
+    if (response.ok) {
+      // Display success toast notification
+      toast.success("Message sent successfully!", {
+        position: "top-right",
+        autoClose: 5000, // Display the toast for 5 seconds
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    } else {
+      // Display error toast notification
+      toast.error("Failed to send message.", {
+        position: "top-right",
+        autoClose: 5000, // Display the toast for 5 seconds
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
+  };
+
   return (
-    <form
-      className={styles.contactForm}
-      onSubmit={(e) => {
-        e.preventDefault();
-      }}
-    >
-      <div className={styles.tri} />
-      <h1>Say Us a Hello!</h1>
-      <p>Let us know more about you.</p>
-      <div className={styles.inps}>
-        <CustomInput placeHolder="Full Name*" required />
-        <CustomInput placeHolder="Email*" required type="email" />
-        <CustomInput placeHolder="Mobile Number*" required type="tel" />
-        <CustomTextArea placeHolder="Message*" rows={3} required />
-        <CustomInput type="submit" />
-      </div>
-    </form>
+    <>
+      {/* ToastContainer is required to show the notifications */}
+      <ToastContainer />
+
+      <form className={styles.contactForm} onSubmit={handleSubmit}>
+        <h2>Get in Touch</h2>
+
+        {/* Row for first name and last name inputs */}
+        <div className={styles.formRow}>
+          <CustomInput
+            placeHolder="First Name*"
+            required
+            name="firstName"
+            value={formData.firstName}
+            onChange={handleChange}
+          />
+          <CustomInput
+            placeHolder="Last Name*"
+            required
+            name="lastName"
+            value={formData.lastName}
+            onChange={handleChange}
+          />
+        </div>
+
+        {/* Row for email input */}
+        <div className={styles.formRow}>
+          <CustomInput
+            placeHolder="Email*"
+            required
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+          />
+        </div>
+
+        {/* Row for mobile number input */}
+        <div className={styles.formRow}>
+          <CustomInput
+            placeHolder="Mobile Number*"
+            required
+            type="tel"
+            name="mobile"
+            value={formData.mobile}
+            onChange={handleChange}
+          />
+        </div>
+
+        {/* Textarea row for message input */}
+        <div className={styles.formRowInline}>
+          <label htmlFor="message">How can we help you?</label>
+          <CustomTextArea
+            id="message"
+            placeholder="Your Message*"
+            aria-label="Message"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+          />
+        </div>
+
+        {/* Submit button */}
+        <button type="submit" className={styles.submitButton}>
+          Submit
+        </button>
+
+        {/* Disclaimer message */}
+        <p>By submitting, you agree to our terms and conditions.</p>
+      </form>
+    </>
   );
 };
 

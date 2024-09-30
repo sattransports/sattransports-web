@@ -1,0 +1,133 @@
+.managementTeam {
+  padding: 50px 0;
+  background-color: $color_1; // Assuming $color_1 is defined in your variables.
+  color: white;
+
+  .innerContainer {
+    padding: 40px;
+    box-sizing: border-box;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @include respond-below(md) {
+      padding: 20px;
+    }
+  }
+
+  .teamHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    h2 {
+      font-size: 3rem;
+      text-align: left;
+
+      @include respond-below(md) {
+        text-align: center;
+      }
+    }
+
+    .divider {
+      text-align: right;
+      font-size: 1.5rem;
+      width: 100%;
+      max-width: 300px;
+
+      @include respond-above(md) {
+        display: inline-block;
+      }
+
+      @include respond-below(md) {
+        display: none;
+      }
+    }
+  }
+
+  .subtitle {
+    text-align: left;
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+
+    @include respond-below(md) {
+      text-align: center;
+    }
+  }
+
+  .teamMember {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    max-width: 100%;
+    gap: 30px;
+
+    @include respond-below(md) {
+      flex-direction: column;
+    }
+
+    &.reverse {
+      flex-direction: row-reverse;
+
+      @include respond-below(md) {
+        flex-direction: column;
+      }
+    }
+
+    .imageContainer {
+      flex: 1;
+      display: flex;
+      justify-content: flex-start;
+      padding: 0 20px;
+
+      .image {
+        width: 100%;
+        max-width: 500px;
+        object-fit: cover;
+
+        @include respond-below(md) {
+          max-width: 100%;
+        }
+      }
+    }
+
+    &.reverse .imageContainer {
+      justify-content: flex-end;
+
+      @include respond-below(md) {
+        justify-content: flex-start;
+      }
+    }
+
+    .textContainer {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 0 20px;
+      font-size: 0.9rem;
+      max-width: 400px;
+
+      h3 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+      }
+
+      .position {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .description {
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+
+      @include respond-below(md) {
+        text-align: center;
+      }
+    }
+  }
+}

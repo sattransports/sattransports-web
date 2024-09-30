@@ -1,0 +1,87 @@
+// Main service section styling
+.serviceSection {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2rem;
+  width: 100%;
+  background-color: rgb(245, 245, 245); // Light background for the section.
+}
+
+// Styling for each service item
+.serviceItem {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+
+  // Adjust layout for smaller screens
+  @include respond-below(md) {
+    flex-direction: column;
+  }
+
+  // If the image is on the left
+  &.left {
+    .imageContainer {
+      width: 40%; // Image takes up 40% width
+      @include respond-below(md) {
+        width: 100%; // Full width on mobile
+      }
+    }
+    .textContainer {
+      width: 60%; // Text takes up 60% width
+      @include respond-below(md) {
+        width: 100%; // Full width on mobile
+      }
+    }
+  }
+
+  // If the image is on the right
+  &.right {
+    flex-direction: row-reverse; // Reverse the order of image and text
+    @include respond-below(md) {
+      flex-direction: column; // Default to column layout on mobile
+    }
+
+    .imageContainer {
+      width: 35%; // Image takes up 35% width
+      @include respond-below(md) {
+        width: 100%; // Full width on mobile
+      }
+    }
+    .textContainer {
+      width: 65%; // Text takes up 65% width
+      @include respond-below(md) {
+        width: 100%; // Full width on mobile
+      }
+    }
+  }
+}
+
+// Image container styling
+.imageContainer {
+  .image {
+    width: 100%; // Image takes up full width of its container
+    height: auto; // Maintain aspect ratio
+    object-fit: cover; // Ensure image covers the container without distortion
+    border-radius: 15px; // Rounded corners for the image
+    margin-top: 0;
+  }
+}
+
+// Text container styling
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; // Vertically center the text
+
+  .title {
+    font-size: 2rem;
+    font-weight: 600; // Bold font for title
+    color: $color_2; // Secondary theme color
+  }
+
+  .description {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: $color_1; // Primary theme color
+  }
+}

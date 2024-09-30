@@ -1,5 +1,12 @@
+//
+// FLEX CENTER MIXIN
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// A mixin to center elements using flexbox.
+// Usage: @include flexCenter;
+// This centers both horizontally and vertically.
 @mixin flexCenter {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; // Center items horizontally
+  align-items: center; // Center items vertically
 }

@@ -1,0 +1,90 @@
+.joinTeam {
+  background-color: $color_1; // Primary color background.
+  padding-bottom: 100px; // Bottom padding for spacing.
+
+  @include respond-below(md) {
+    margin-top: 2.5rem; // Adjust margin for smaller screens.
+    max-width: 100%; // Full width for mobile.
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .joinContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    padding: 4rem 2.75rem; // Padding inside the content area.
+    margin-top: 3.5rem;
+    width: 100%;
+    background-color: $color_2; // Secondary color background.
+    max-width: 1070px;
+    min-height: 200px;
+
+    @include respond-below(md) {
+      padding: 2.5rem 1.25rem; // Adjust padding for smaller screens.
+      margin-top: 2.5rem;
+      max-width: 100%;
+    }
+
+    .joinInfo {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem; // Gap between items.
+      align-items: center;
+
+      @include respond-below(md) {
+        max-width: 100%; // Full width for mobile.
+        text-align: center; // Center-align text on smaller screens.
+      }
+
+      .joinIcon {
+        display: flex;
+        gap: 0.625rem;
+        align-items: center;
+        background-color: white; // White background for the icon.
+        border-radius: 9999px; // Circular border radius.
+        height: 42px;
+        width: 42px;
+        padding: 0.625rem; // Padding inside the icon.
+
+        .iconImage {
+          width: 1.5rem;
+          aspect-ratio: 1; // Maintain aspect ratio.
+
+          @include respond-below(md) {
+            margin: 0 auto;
+          }
+        }
+      }
+
+      .joinText {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2.5rem;
+        align-items: center;
+        min-width: 240px;
+
+        @include respond-below(md) {
+          max-width: 100%; // Full width for mobile.
+          text-align: center;
+        }
+
+        .description {
+          flex-grow: 1;
+          font-size: 1rem;
+          color: $color_1; // Text color.
+          max-width: 663px;
+
+          @include respond-below(md) {
+            max-width: 100%; // Full width for mobile.
+          }
+        }
+      }
+    }
+  }
+}

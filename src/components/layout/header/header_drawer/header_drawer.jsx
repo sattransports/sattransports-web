@@ -1,8 +1,8 @@
-import React from "react";
-import Link from "next/link";
-import PAGES from "@/constants/pages";
-import styles from "./header_drawer.module.scss";
-import { Image, Offcanvas } from "react-bootstrap";
+import React from "react"; // React import.
+import Link from "next/link"; // Next.js Link component.
+import PAGES from "@/constants/pages"; // Pages constants for navigation.
+import styles from "./header_drawer.module.scss"; // SCSS module for styling.
+import { Image, Offcanvas } from "react-bootstrap"; // Bootstrap components for image and off-canvas navigation.
 
 const HeaderDrawer = ({ show, setShow, router }) => {
   return (
@@ -11,28 +11,27 @@ const HeaderDrawer = ({ show, setShow, router }) => {
         className={styles.head}
         closeButton
         onHide={() => {
-          setShow(false);
+          setShow(false); // Close drawer when clicked.
         }}
       >
-        <Image src='logo.png' alt="logo" fluid width={100} />
+        <Image src="logo.png" alt="logo" fluid width={100} />{" "}
+        {/* Placeholder logo */}
       </Offcanvas.Header>
       <Offcanvas.Body>
         <div className={styles.body}>
           <nav>
-            {PAGES.map((page) => {
-              return (
-                <Link
-                  href={page.href}
-                  key={page.name}
-                  className={router.pathname === page.href ? styles.active : ""}
-                  onClick={() => {
-                    setShow(false);
-                  }}
-                >
-                  {page.name}
-                </Link>
-              );
-            })}
+            {PAGES.map((page) => (
+              <Link
+                href={page.href}
+                key={page.name}
+                className={router.pathname === page.href ? styles.active : ""}
+                onClick={() => {
+                  setShow(false); // Close drawer on link click.
+                }}
+              >
+                {page.name}
+              </Link>
+            ))}
           </nav>
         </div>
       </Offcanvas.Body>

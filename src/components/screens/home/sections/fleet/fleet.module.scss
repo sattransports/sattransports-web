@@ -1,38 +1,38 @@
 .whyUs {
   background-color: $color_1;
-  padding-bottom: 100px;
+  padding-bottom: 100px; // Bottom padding for spacing.
 }
 
 .p {
   color: white;
-  text-align: center;
+  text-align: center; // Center-align the paragraph text.
 }
 
 @include respond-below(lg) {
   .c {
-    margin-bottom: 30px;
+    margin-bottom: 30px; // Space between columns on smaller screens.
   }
 }
 
 .card {
   background-color: white;
-  @include flexCenter;
+  @include flexCenter; // Utility class for centering.
   flex-direction: column;
   text-align: center;
   padding: 16px;
-  gap: 16px;
+  gap: 16px; // Gap between elements.
   border-radius: 10px;
   border: 4px solid $color_2;
   height: 100%;
 
   h4 {
-    color: $color_1;
+    color: $color_1; // Heading color.
   }
   p {
-    color: rgb(77, 77, 77);
+    color: rgb(77, 77, 77); // Paragraph color.
   }
   &:hover {
-    transform: scale(1.03);
-    background-color: $color_2;
+    transform: scale(1.03); // Slight scale on hover.
+    background-color: $color_2; // Background color change on hover.
   }
 }

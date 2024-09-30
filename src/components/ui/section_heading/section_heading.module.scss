@@ -1,46 +1,51 @@
 .sectionHead {
-  padding: 50px 0;
-  text-align: center;
-  position: relative;
-
+  padding: 50px 0; // Vertical padding for spacing.
+  text-align: center; // Center-align heading text.
+  position: relative; // Positioning for additional elements if needed (e.g., background decorations).
+  margin-top: 35px;
   h1 {
-    font-size: 50px;
-    font-weight: 800;
+    font-size: 50px; // Font size for the heading.
+    font-weight: 800; // Bold weight for emphasis.
   }
 
   hr {
-    margin: 0 auto;
-    width: 140px;
-    height: 6px;
-    border: none;
-    opacity: 1;
+    margin: 0 auto; // Center the horizontal rule.
+    width: 140px; // Set the width of the horizontal rule.
+    height: 6px; // Thickness of the horizontal rule.
+    border: none; // Remove default border.
+    opacity: 1; // Ensure the horizontal rule is fully opaque.
   }
 
+  // Variant 1 styles
   &.v1 {
     h1 {
-      color: $color_1;
+      color: $color_1; // Apply primary color to the heading text.
     }
 
     hr {
-      background-color: $color_2;
+      background-color: $color_2; // Secondary color for the horizontal rule.
     }
   }
+
+  // Variant 2 styles
   &.v2 {
     h1 {
-      color: $color_2;
+      color: $color_2; // Apply secondary color to the heading text.
     }
 
     hr {
-      background-color: white;
+      background-color: white; // White horizontal rule.
     }
   }
+
+  // Variant 3 styles
   &.v3 {
     h1 {
-      color: white;
+      color: white; // White heading text.
     }
 
     hr {
-      background-color: $color_1;
+      background-color: $color_1; // Primary color for the horizontal rule.
     }
   }
 }

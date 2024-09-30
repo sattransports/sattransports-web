@@ -1,54 +1,63 @@
-import SectionHeading from "@/components/ui/section_heading/section_heading";
-import React from "react";
-import styles from "./about.module.scss";
-import CustomContainer from "@/components/ui/custom_container/custom_container";
-import { Image } from "react-bootstrap";
-import WhyChooseUs from "./whychooseus/whychooseus";
+import React from "react"; // React import.
+import styles from "./about.module.scss"; // SCSS module for styling.
+import SectionHeading from "@/components/ui/section_heading/section_heading"; // Section heading component.
+import CustomContainer from "@/components/ui/custom_container/custom_container"; // Custom container for consistent layout.
+import { Image } from "react-bootstrap"; // Bootstrap Image component.
+import WhyChooseUs from "./why_choose_us/why_choose_us"; // "Why Choose Us" component.
+import ManagementTeam from "./management/management"; // Management team component.
+import ImageCarousel from "./image_carousal/image_carousal"; // Image carousel component.
+import { missionValuesData } from "@/constants/contact"; // Mission and values data from constants.
 
 const AboutScreen = () => {
-  const missionValuesData = [
-    {
-      title: "Our Mission",
-      description:
-        "To be the preferred transportation partner for individuals and businesses, offering innovative solutions that exceed customer expectations.",
-      icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/e45e10a0391e4fd7e175db4f3257eba0fefc793950a96c9ce6f2bceca39debd7?placeholderIfAbsent=true&apiKey=71133375415a4aeab1b4d2d16190b188",
-    },
-    {
-      title: "Our Values",
-      description:
-        "SAT Taxi is committed to providing safe, reliable, and exceptional transportation services through innovation and integrity.",
-      icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/597f2de64108eac30c43b3d5d156e9d1101ca90a2be7a23962d46508c5fd9c58?placeholderIfAbsent=true&apiKey=71133375415a4aeab1b4d2d16190b188",
-    },
-  ];
-
   return (
     <main className={styles.aboutScreen}>
-      <SectionHeading head="About Us" />
+      <SectionHeading head="About Us" /> {/* About Us heading */}
       <CustomContainer>
-        <p className={styles.caption}>
-          SAT Taxi is a leading provider of reliable and efficient taxi
-          services. We are committed to delivering exceptional customer
-          experiences and ensuring your journeys are safe, comfortable, and
-          convenient. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-          Natus sapiente a eos incidunt error doloremque quas eligendi quidem
-          rem, deleniti quae ex eius ducimus eum veritatis iure dignissimos,
-          provident iusto aut! Praesentium doloribus, tempore maxime perferendis
-          est quod nisi nulla, eveniet aut repudiandae inventore dolorum
-          incidunt, ut perspiciatis id dolore!
-          <br />
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
-          soluta. Tenetur sequi nam recusandae corporis assumenda ex esse vero
-          aperiam voluptatem soluta facilis consectetur tempore, a quo vel, eius
-          facere asperiores! Voluptates ad ipsam vitae dolorem commodi, natus
-          cum odit veritatis incidunt dolorum numquam quod ut dolores, tenetur
-          alias quo minus maxime impedit fugiat qui iure assumenda sequi? Harum
-          ipsa illum nemo mollitia ratione aliquam cupiditate, accusantium ad
-          possimus necessitatibus quibusdam dolorum ea cumque tenetur magni
-          nobis dolore cum? Eos ab quo atque voluptatibus numquam eum, quasi
-          repudiandae quidem itaque molestiae, est nobis laboriosam laudantium
-          reprehenderit consectetur, distinctio pariatur sed!
-        </p>
+        <div className="row align-items-center">
+          <div className="col-md-6">
+            {/* Column for the text */}
+            <div className={styles.bannerLeftContent}>
+              <p>
+                Shree Annamalaiyar Travels (SAT) began its journey over a decade
+                ago, driven by a vision to provide safe, reliable, and punctual
+                transportation services tailored to the needs of IT companies.
+                Since our humble beginnings, we have grown into a trusted name
+                in the employee transportation industry.
+              </p>
+              <br />
+              <p>
+                In 2012, SAT launched with a modest fleet, laying the foundation
+                for future growth. By 2015, we expanded our clientele and fleet
+                size to 50+ vehicles.
+              </p>
+              <br />
+              <p>
+                By 2023, SAT expanded its fleet to 75+ vehicles, delivering
+                prompt, safe, and reliable transportation services for IT
+                companies.
+              </p>
+              <br />
+              <p>
+                Our journey reflects our dedication and unwavering focus on
+                providing the best transportation solutions.
+              </p>
+            </div>
+          </div>
+          <div className="col-md-6">
+            {/* Column for the image */}
+            <div className={styles.bannerRightImgSec}>
+              <Image
+                loading="lazy"
+                src="/assets/about/sidecar.png"
+                alt="car img"
+                className={styles.bannerImg}
+              />
+            </div>
+          </div>
+        </div>
         <br />
+
+        {/* Mission and Values Section */}
         <div className={styles.missionValuesSection}>
           <div className={styles.valuesContainer}>
             {missionValuesData.map((item, index) => (
@@ -59,7 +68,7 @@ const AboutScreen = () => {
                       <Image
                         loading="lazy"
                         src={item.icon}
-                        alt={item.title}
+                        alt={item.title} // Alt text for icons.
                         className={styles.valueIcon}
                         width={48}
                         height={48}
@@ -73,7 +82,11 @@ const AboutScreen = () => {
             ))}
           </div>
         </div>
+
+        {/* Including other sections */}
         <WhyChooseUs />
+        <ManagementTeam />
+        <ImageCarousel />
       </CustomContainer>
     </main>
   );

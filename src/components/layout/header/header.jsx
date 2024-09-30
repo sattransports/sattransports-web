@@ -1,22 +1,19 @@
-import Link from "next/link";
-import Image from "next/image";
-import PAGES from "@/constants/pages";
-import { useRouter } from "next/router";
-import styles from "./header.module.scss";
-import logo from "../../../../public/logo.png";
-import React, { useEffect, useState } from "react";
-import HeaderDrawer from "./header_drawer/header_drawer";
-import leftImg from "../../../../public/assets/Skoda.png";
-import rightImg from "../../../../public/assets/Bolera.png";
-import CustomContainer from "@/components/ui/custom_container/custom_container";
+import React, { useEffect, useState } from "react"; // React hooks.
+import Link from "next/link"; // Next.js Link component.
+import { Image } from "react-bootstrap"; // Bootstrap Image component.
+import PAGES from "@/constants/pages"; // Pages constants for navigation.
+import { useRouter } from "next/router"; // Next.js router for navigation.
+import styles from "./header.module.scss"; // SCSS module for styling.
+import HeaderDrawer from "./header_drawer/header_drawer"; // Drawer component for mobile navigation.
+import CustomContainer from "@/components/ui/custom_container/custom_container"; // Custom container for layout.
 
 function Header() {
   const router = useRouter();
-
-  const [show, setShow] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [show, setShow] = useState(false); // State to control drawer visibility.
+  const [scrolled, setScrolled] = useState(false); // State to track scroll position.
 
   useEffect(() => {
+    // Scroll event listener to apply scroll styles.
     window.addEventListener("scroll", () => {
       setScrolled(window.scrollY > 0);
     });
@@ -26,20 +23,9 @@ function Header() {
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
       <div className={styles.mobileHeader}>
         <div className={styles.mobileLogo}>
-          <Image
-            src={logo}
-            alt="logo"
-            fluid
-            className={styles.logo}
-            style={{}}
-          />
+          <Image src="/logo.png" alt="logo" fluid className={styles.logo} />
         </div>
-        <div
-          className={styles.hamBurger}
-          onClick={() => {
-            setShow(true)
-          }}
-        >
+        <div className={styles.hamBurger} onClick={() => setShow(true)}>
           <span></span>
           <span></span>
           <span></span>
@@ -51,7 +37,7 @@ function Header() {
         <div className={styles.wrap}>
           <div>
             <Image
-              src={leftImg}
+              src="/Skoda.png"
               alt="left-img"
               fluid
               className={styles.img}
@@ -60,7 +46,7 @@ function Header() {
           </div>
           <nav>
             <div>
-              <Image src={logo} alt="logo" fluid className={styles.logo} />
+              <Image src="/logo.png" alt="logo" fluid className={styles.logo} />
             </div>
             <div>
               <ul>
@@ -79,7 +65,7 @@ function Header() {
           </nav>
           <div>
             <Image
-              src={rightImg}
+              src="/Bolera.png"
               alt="right-img"
               fluid
               className={styles.img}

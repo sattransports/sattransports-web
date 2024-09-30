@@ -1,49 +1,90 @@
 .contactForm {
-  background-color: white;
-  padding: 30px;
-  width: 500px;
-  min-width: 500px;
-  position: relative;
+  background-color: $color_2; // Background color from SCSS variables.
+  padding: 40px;
+  border-radius: 20px; // Rounded corners.
+  max-width: 700px;
+  margin-left: auto; // Center align the form horizontally.
+  margin-right: auto;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1); // Subtle shadow effect.
 
-  box-shadow: rgba(0, 0, 0, 0.3) 1.95px 1.95px 2.6px;
-  // box-shadow: $color_2 1.95px 1.95px 2.6px;
-  .tri {
-    height: 100px;
-    position: absolute;
-    top: -29px;
-    right: 50px;
-    width: 0;
-    height: 0;
-    border-left: 30px solid transparent;
-    border-right: 30px solid transparent;
-    border-bottom: 30px solid white;
+  @include respond-below(md) {
+    padding: 20px; // Adjust padding for mobile screens.
+    max-width: 100%; // Full width on smaller screens.
+  }
 
-    @include respond-above(lg){
-     left: -42px;
-     transform: rotate(-90deg);
-     top: 50px;
+  h2 {
+    text-align: center; // Center align the heading.
+    font-size: 32px; // Large font size for the heading.
+  }
+
+  .formRow {
+    display: flex; // Flex layout for row of inputs.
+    gap: 20px; // Space between the inputs.
+    margin-top: 20px;
+
+    @include respond-below(md) {
+      flex-direction: column; // Stack inputs vertically on smaller screens.
+    }
+
+    input,
+    select,
+    textarea {
+      padding: 12px; // Padding inside form fields.
+      border-radius: 10px; // Rounded corners for form fields.
+      border: 1px solid #ccc; // Light gray border for form fields.
+      width: 100%; // Full width form fields.
     }
   }
-  h1 {
-    margin: 0;
-    color: $color_1;
+
+  .formRowInline {
+    display: flex;
+    align-items: center; // Vertically align label and textarea.
+    gap: 20px; // Space between the label and textarea.
+    margin-top: 20px;
+
+    @include respond-below(md) {
+      flex-direction: column; // Stack label and textarea vertically on smaller screens.
+    }
+
+    label {
+      width: 30%; // Label width as a percentage of the row.
+      font-size: 16px; // Standard font size for label.
+    }
+
+    textarea {
+      flex-grow: 1; // Let textarea fill the remaining space.
+      height: 120px; // Fixed height for textarea.
+    }
+  }
+
+  button {
+    background-color: $color_1; // Primary button background color from SCSS variables.
+    color: $color_2; // Button text color.
+    padding: 10px 20px; // Padding inside the button.
+    border-radius: 10px; // Rounded button.
+    margin-top: 20px;
+    display: block;
+    width: fit-content; // Button width adjusts based on content size.
+    margin-left: auto; // Center the button horizontally.
+    margin-right: auto;
+    cursor: pointer; // Pointer cursor on hover.
+    transition: background-color 0.3s ease; // Smooth transition for hover effect.
+
+    &:hover {
+      background-color: darken(
+        $color_1,
+        10%
+      ); // Darken the button color on hover.
+    }
+
+    &:active {
+      transform: scale(0.98); // Slight shrink effect on button press.
+    }
   }
 
   p {
-    color: grey;
-  }
-  border-radius: 10px;
-
-  .inps {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 20px;
-  }
-
-  @include respond-below(md) {
-    padding: 16px;
-    width: 100%;
-    min-width: 100%;
+    text-align: center; // Center align the disclaimer text.
+    margin-top: 10px;
+    font-size: 14px; // Smaller font size for disclaimer text.
   }
 }
