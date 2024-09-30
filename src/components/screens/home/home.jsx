@@ -1,4 +1,4 @@
-import BgVideo from "./sections/bg_video/bg_Video";
+import BgVideo from "./sections/bg_video/bg_video";
 import WhySat from "./sections/why_sat/why_sat";
 import ReviewsSection from "./sections/reviews/reviews";
 import Fleet from "./sections/fleet/fleet";
