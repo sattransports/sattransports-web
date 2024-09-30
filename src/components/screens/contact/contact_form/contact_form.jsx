@@ -1,55 +1,81 @@
-import React from "react"; // React import.
-import styles from "./contact_form.module.scss"; // SCSS module for styling.
-import CustomInput from "@/components/ui/custom_input/custom_input"; // Custom Input component.
-import CustomTextArea from "@/components/ui/custom_textarea/custom_textarea"; // Custom TextArea component.
-import CustomButton from "@/components/ui/custom_button/custom_button"; // Custom Button component.
+import React from "react";
+import styles from "./contact_form.module.scss";
+import CustomInput from "@/components/ui/custom_input/custom_input";
+import CustomTextArea from "@/components/ui/custom_textarea/custom_textarea";
 
-// Contact form component for user inquiries.
 const ContactForm = () => {
-  return (
-    <form
-      className={styles.contactForm}
-      onSubmit={(e) => {
-        e.preventDefault(); // Prevents the default form submission behavior.
-        // Add form submission logic here, e.g., API call to send the form data.
-      }}
-    >
-      {/* Form heading */}
-      <h2>Get in Touch</h2>
+  const [formData, setFormData] = useState({
+    formType: "contact",
+    firstName: "",
+    lastName: "",
+    email: "",
+    mobile: "",
+    message: "",
+  });
 
-      {/* Row for first name and last name inputs */}
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const response = await fetch("/api/form", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      toast.success("Message sent successfully!", {
+        position: "top-right",
+        autoClose: 5000, // Display the toast for 5 seconds
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    } else {
+      toast.error("Failed to send message.", {
+        position: "top-right",
+        autoClose: 5000, // Display the toast for 5 seconds
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
+  };
+
+  return (
+    <form className={styles.contactForm}>
+      <h2>Get in Touch</h2>
       <div className={styles.formRow}>
         <CustomInput placeHolder="First Name*" required />
         <CustomInput placeHolder="Last Name*" required />
       </div>
-
-      {/* Row for email input */}
       <div className={styles.formRow}>
         <CustomInput placeHolder="Email*" required type="email" />
       </div>
-
-      {/* Row for mobile number input */}
       <div className={styles.formRow}>
+        {/* <select aria-label="Country Code">
+          <option>+91</option>
+        </select> */}
         <CustomInput placeHolder="Mobile Number*" required type="tel" />
       </div>
-
-      {/* Textarea row for message input */}
-      <div className={styles.formRowInline}>
-        <label htmlFor="message" className={styles.formLabel}>
-          How can we help you?
-        </label>
-        <CustomTextArea
-          id="message"
-          placeHolder="Your Message*"
-          rows={4}
-          required
-        />
-      </div>
-
-      {/* Submit button */}
-      <CustomButton type="submit">Submit</CustomButton>
-
-      {/* Disclaimer message */}
+      <label htmlFor="message">How can we help you?</label>
+      <CustomTextArea
+        id="message"
+        placeholder="Your Message"
+        aria-label="Message"
+      ></CustomTextArea>
+      <button type="submit">Submit</button>
       <p>By submitting, you agree to our terms and conditions.</p>
     </form>
   );
