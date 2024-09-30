@@ -5,7 +5,7 @@ import Fleet from "./sections/fleet/fleet";
 import HowWeWork from "./sections/how_we_work/how_we_work";
 import JoinTaxiTeam from "./sections/join_sat_team/join_sat_team";
 import ClientCarousel from "./sections/client_carousel/client_carousel";
-import MarqueeComponent from "./sections/marquee/marquee";
+import Marquee from "./sections/marquee/Marquee";
 
 // HomeScreen component displays various sections of the home page.
 const HomeScreen = () => {
@@ -15,7 +15,7 @@ const HomeScreen = () => {
       <BgVideo />
 
       {/* Marquee for moving text */}
-      <MarqueeComponent />
+      <Marquee />
 
       {/* Section describing how the company works */}
       <HowWeWork />
