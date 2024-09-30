@@ -42,18 +42,19 @@ export default async function handler(req, res) {
       `;
     }
     console.log("email ----> content ------>", emailContent);
+    // Nodemailer transporter configuration
     const transporter = nodemailer.createTransport({
-      service: "gmail", // or other email service
+      service: "gmail",
       auth: {
-        user: "gokulhari1999@gmail.com",
-        pass: "jayanthiGokul@1999",
+        user: process.env.EMAIL_USER, // Your email address from environment variable
+        pass: process.env.EMAIL_PASS, // Your App Password from environment variable
       },
     });
 
     try {
       await transporter.sendMail({
         from: process.env.EMAIL_USER,
-        to: "gokulhari1999@gmail.com", // Add your recipient email here
+        to: "midhun.s.viswanathan@gmail.com", // Add your recipient email here
         subject:
           formType === "contact"
             ? "Contact Form Submission"
