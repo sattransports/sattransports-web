@@ -37,7 +37,7 @@ function Header() {
         <div className={styles.wrap}>
           <div>
             <Image
-              src="/Skoda.png"
+              src="/wagonor.png"
               alt="left-img"
               fluid
               className={styles.img}
@@ -65,7 +65,7 @@ function Header() {
           </nav>
           <div>
             <Image
-              src="/Bolera.png"
+              src="/marrazi.png"
               alt="right-img"
               fluid
               className={styles.img}
