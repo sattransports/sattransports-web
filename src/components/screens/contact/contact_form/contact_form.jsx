@@ -2,6 +2,7 @@ import React, { useState } from "react"; // React import.
 import styles from "./contact_form.module.scss"; // SCSS module for styling.
 import CustomInput from "@/components/ui/custom_input/custom_input"; // Custom Input component.
 import CustomTextArea from "@/components/ui/custom_textarea/custom_textarea"; // Custom TextArea component.
+import CustomButton from "@/components/ui/custom_button/custom_button"; // Custom button component.
 import { ToastContainer, toast } from "react-toastify"; // Import Toastify
 import "react-toastify/dist/ReactToastify.css"; // Import Toastify CSS
 
@@ -45,6 +46,16 @@ const ContactForm = () => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
+      });
+
+      // Reset the form fields back to their initial values
+      setFormData({
+        formType: "contact",
+        firstName: "",
+        lastName: "",
+        email: "",
+        mobile: "",
+        message: "",
       });
     } else {
       // Display error toast notification
@@ -124,9 +135,9 @@ const ContactForm = () => {
         </div>
 
         {/* Submit button */}
-        <button type="submit" className={styles.submitButton}>
+        <CustomButton type="submit" className={styles.submitButton}>
           Submit
-        </button>
+        </CustomButton>
 
         {/* Disclaimer message */}
         <p>By submitting, you agree to our terms and conditions.</p>

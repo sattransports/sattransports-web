@@ -7,10 +7,14 @@ import SectionHeading from "@/components/ui/section_heading/section_heading"; //
 const ServicesInAction = () => {
   return (
     <section className={styles.servicesInAction}>
-      <SectionHeading head="Our Services in Action" /> {/* Section Heading */}
+      <SectionHeading head="Our Services in Action" data-aos="fade-up" />{" "}
+      {/* Section Heading with animation */}
       <CustomContainer>
         <div className={styles.row}>
-          <div className={`${styles.serviceBlock} ${styles.width295}`}>
+          <div
+            className={`${styles.serviceBlock} ${styles.width295}`}
+            data-aos="fade-up"
+          >
             <Image
               src="https://images.pexels.com/photos/17304862/pexels-photo-17304862/free-photo-of-a-blue-lamborghini-on-a-street.jpeg"
               alt="Service in action"
@@ -18,7 +22,11 @@ const ServicesInAction = () => {
               height={800}
             />
           </div>
-          <div className={`${styles.serviceBlock} ${styles.width610}`}>
+          <div
+            className={`${styles.serviceBlock} ${styles.width610}`}
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             <Image
               src="https://images.pexels.com/photos/17304862/pexels-photo-17304862/free-photo-of-a-blue-lamborghini-on-a-street.jpeg"
               alt="Service in action"
@@ -26,7 +34,11 @@ const ServicesInAction = () => {
               height={800}
             />
           </div>
-          <div className={`${styles.serviceBlock} ${styles.width295}`}>
+          <div
+            className={`${styles.serviceBlock} ${styles.width295}`}
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <Image
               src="https://images.pexels.com/photos/17304862/pexels-photo-17304862/free-photo-of-a-blue-lamborghini-on-a-street.jpeg"
               alt="Service in action"
@@ -36,7 +48,11 @@ const ServicesInAction = () => {
           </div>
         </div>
         <div className={styles.row}>
-          <div className={`${styles.serviceBlock} ${styles.width715}`}>
+          <div
+            className={`${styles.serviceBlock} ${styles.width715}`}
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
             <Image
               src="https://images.pexels.com/photos/17304862/pexels-photo-17304862/free-photo-of-a-blue-lamborghini-on-a-street.jpeg"
               alt="Service in action"
@@ -47,6 +63,8 @@ const ServicesInAction = () => {
           <div className={styles.column}>
             <div
               className={`${styles.serviceBlock} ${styles.width530height300}`}
+              data-aos="fade-up"
+              data-aos-delay="400"
             >
               <Image
                 src="https://images.pexels.com/photos/17304862/pexels-photo-17304862/free-photo-of-a-blue-lamborghini-on-a-street.jpeg"
@@ -57,6 +75,8 @@ const ServicesInAction = () => {
             </div>
             <div
               className={`${styles.serviceBlock} ${styles.width530height175}`}
+              data-aos="fade-up"
+              data-aos-delay="500"
             >
               <Image
                 src="https://images.pexels.com/photos/17304862/pexels-photo-17304862/free-photo-of-a-blue-lamborghini-on-a-street.jpeg"

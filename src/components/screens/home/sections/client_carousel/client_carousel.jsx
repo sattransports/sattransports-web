@@ -15,7 +15,7 @@ const ClientCarousel = () => {
     slidesToShow: 3, // Number of slides visible.
     slidesToScroll: 1, // Number of slides to scroll at a time.
     autoplay: true, // Autoplay enabled.
-    autoplaySpeed: 3000, // 3-second autoplay interval.
+    autoplaySpeed: 2000, // 2-second autoplay interval.
     arrows: true, // Arrows for navigation.
     responsive: [
       {

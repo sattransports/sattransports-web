@@ -47,7 +47,11 @@ const HowWeWork = () => {
           </Col>
           <Col xs={12} md={5}>
             <div className={styles.img} data-aos="fade-left">
-              <Image src="/logo.png" alt="SAT Logo" fluid />{" "}
+              <Image
+                src="assets/home/homeherosection.png"
+                alt="SAT Logo"
+                fluid
+              />{" "}
               {/* Company logo */}
             </div>
           </Col>

@@ -10,8 +10,11 @@ const HeroSection = () => {
         src="/assets/services/svcherobg.png"
         alt="Background image for hero section"
         className={styles.heroImage}
+        data-aos="zoom-in" // Add AOS animation for background image
       />
-      <div className={styles.heroContent}>
+      <div className={styles.heroContent} data-aos="fade-up">
+        {" "}
+        {/* Add AOS animation for text */}
         <h1>Our Services</h1>
         <p>
           At SAT Transport, we offer a wide range of transportation solutions
